@@ -32,8 +32,10 @@
 }
 
 main{
-    margin-top: 70px;
+    margin-top: 90px;
 }
+
+/*home page*/
 .hero {
     position: relative;
     width: 100%;
@@ -71,7 +73,7 @@ main{
 .banner button a {
     text-decoration: none;
     font-family: 'Montserrat';
-    font-weight: semibold;
+    font-weight: bold;
     font-size: 13px;
     letter-spacing: 8px;
     text-transform: uppercase;
@@ -79,3 +81,78 @@ main{
     color: black;
 }
 
+/*  log in */
+.bg-gradient-card {
+    background: rgb(245, 222, 179);
+    background: linear-gradient(90deg, rgba(245, 222, 179, 1) 0%, rgba(200, 128, 79, 1) 29%, rgba(238, 216, 197, 1) 100%);
+}
+.btn-custom {
+    background-color: rgba(200, 128, 79, 1);
+    color: white;
+    transition: background-color 0.3s ease;
+    font-family: 'Montserrat';
+    font-size: 0.7rem;
+    font-weight: bold;
+    letter-spacing: 5px;
+    line-height: 27.5px;
+    text-transform: uppercase;
+    border-radius: 30px;
+}
+
+.btn-custom:hover {
+    background-color: rgba(150, 100, 60, 1);
+    /* Color más oscuro o diferente para el hover */
+}
+
+.form-control {
+    background-color: transparent;
+    /* Fondo transparente */
+    border: 1px solid black;
+    /* Color del borde */
+    color: black;
+    /* Color del texto */
+}
+
+.form-control::placeholder {
+    color: rgba(0, 0, 0, 0.5);
+    /* Color del texto del placeholder (opcional) */
+}
+.card-header{
+    font-family: 'Montserrat';
+    font-size: 1.15rem;
+    font-weight: bold;
+    letter-spacing: 8px;
+    line-height: 27.5px;
+    text-transform: uppercase;
+}
+.form-control{
+    font-family: 'Montserrat';
+}
+
+
+/*  registro */
+.card {
+    transition: transform 0.3s ease;
+    /* Para efecto visual */
+}
+
+.card.rounded-lg {
+    border-radius: 20px;
+    /* Ajusta el border-radius según prefieras */
+}
+.card.shadow {
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    /* Añadir sombra para que parezca elevada */
+}
+.card-body {
+    padding: 1rem;
+    /* Ajusta este valor según sea necesario */
+}
+.text-center{
+    font-family: 'Montserrat';
+    font-size: 1.15rem;
+    font-weight: bold;
+    letter-spacing: 8px;
+    line-height: 27.5px;
+    text-transform: uppercase;
+}

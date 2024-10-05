@@ -36,50 +36,17 @@ main{
 }
 
 /*home page*/
-.hero {
-    position: relative;
-    width: 100%;
-}
-.banner {
-    position: relative;
-}
 
-.banner img {
-    width: 100%;
-    height: auto;
-}
-.banner h1 {
-    position: absolute;
-    top: 43%;
-    left: 8%;
-    color: white;
+.card-title{
     font-family: 'Playfair Display';
-    font-size: 2.5rem;
     font-weight: bold;
+    font-size: 2.5rem;
     line-height: 60.0px;
     letter-spacing: 0;
-    width: 20%;
+    width: 30%;
+
 }
-.banner button {
-    position: absolute;
-    top: 87%;
-    left: 8%;
-    padding: 10px 20px;
-    background-color: rgba(200, 128, 79, 1);
-    border: none;
-    cursor: pointer;
-    border-radius: 30px;
-}
-.banner button a {
-    text-decoration: none;
-    font-family: 'Montserrat';
-    font-weight: bold;
-    font-size: 13px;
-    letter-spacing: 8px;
-    text-transform: uppercase;
-    line-height: 27.5px;
-    color: black;
-}
+
 
 /*  log in */
 .bg-gradient-card {
@@ -101,21 +68,16 @@ main{
 
 .btn-custom:hover {
     background-color: rgba(150, 100, 60, 1);
-    /* Color más oscuro o diferente para el hover */
 }
 
 .form-control {
     background-color: transparent;
-    /* Fondo transparente */
     border: 1px solid black;
-    /* Color del borde */
     color: black;
-    /* Color del texto */
 }
 
 .form-control::placeholder {
     color: rgba(0, 0, 0, 0.5);
-    /* Color del texto del placeholder (opcional) */
 }
 .card-header{
     font-family: 'Montserrat';
@@ -133,20 +95,16 @@ main{
 /*  registro */
 .card {
     transition: transform 0.3s ease;
-    /* Para efecto visual */
 }
 
 .card.rounded-lg {
     border-radius: 20px;
-    /* Ajusta el border-radius según prefieras */
 }
 .card.shadow {
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-    /* Añadir sombra para que parezca elevada */
 }
 .card-body {
     padding: 1rem;
-    /* Ajusta este valor según sea necesario */
 }
 .text-center{
     font-family: 'Montserrat';

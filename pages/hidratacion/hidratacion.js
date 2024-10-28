@@ -15,23 +15,28 @@ let cardContainer = document.getElementById('cardContainer');
 let cardData = [
     {
         imgSrc: '/assets/pexels-photo-4056460.webp',
-        title: 'Card 1',
-        text: 'Some quick example text to build on the card title and make up the bulk of the card\'s content.',
-        buttonLabel: 'Go somewhere'
+        title: 'Glow Masque',
+        text: 'Mascarilla intensiva de hidratación con extractos naturales y ácido hialurónico.',
+        buttonLabel: 'Comprar - $3,500'
     },
     {
-        imgSrc: '/assets/pexels-photo-1234567.webp',
-        title: 'Card 2',
-        text: 'Another example text for a different card.',
-        buttonLabel: 'Learn more'
+        imgSrc: '/assets/cremaHidratante.webp',
+        title: 'Aqua Cream',
+        text: 'Crema facial de textura sedosa con una fórmula enriquecida que nutre y suaviza la piel.',
+        buttonLabel: 'Comprar - $14,200'
     },
     {
-        imgSrc: '/assets/pexels-photo-7654321.webp',
-        title: 'Card 3',
-        text: 'More text content for the third card.',
-        buttonLabel: 'Read more'
+        imgSrc: '/assets/serumHidratante.webp',
+        title: 'Radiance Serum',
+        text: 'Sérum ligero con vitamina C y ácido hialurónico',
+        buttonLabel: 'Comprar - $13,800'
+    },
+    {
+        imgSrc: '/assets/cremaManos.webp',
+        title: 'Body Silk',
+        text: 'Crema corporal ultra hidratante con manteca de karité y aceites esenciales.',
+        buttonLabel: 'Comprar - $14,500'
     }
-    
 ];
 
 window.addEventListener('load', () => {

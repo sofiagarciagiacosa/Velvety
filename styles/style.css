@@ -48,6 +48,7 @@ main{
 }
 
 
+
 /*  log in */
 .bg-gradient-card {
     background: rgb(245, 222, 179);
@@ -95,6 +96,7 @@ main{
 /*  registro */
 .card {
     transition: transform 0.3s ease;
+    
 }
 
 .card.rounded-lg {
@@ -113,4 +115,40 @@ main{
     letter-spacing: 8px;
     line-height: 27.5px;
     text-transform: uppercase;
+}
+
+/* tarjetas de productos */
+
+#card-title-smaller {
+    font-size: 1.50rem;
+    line-height: 27.5px;
+    letter-spacing: 0;
+    text-transform: capitalize;
+    width: 100%;
+}
+
+.btn-product {
+    background-color: rgba(238, 216, 197, 1);
+    color: white;
+    transition: background-color 0.3s ease;
+    font-family: 'Montserrat';
+    font-size: 0.7rem;
+    font-weight: bold;
+    letter-spacing: 5px;
+    line-height: 27.5px;
+    text-transform: uppercase;
+    border-radius: 30px;
+    width: 100%;
+    /* Ancho completo del botón solo para productos */
+    text-align: center;
+    /* Centra el texto */
+}
+
+.btn-product:hover {
+    background-color: rgba(211, 211, 211, 1);
+}
+.card-footer {
+    background-color: transparent;
+    border-top: none;
+    padding-bottom: 20px;
 }

@@ -145,10 +145,14 @@ main{
 }
 
 .btn-product:hover {
-    background-color: rgba(211, 211, 211, 1);
+    background-color: rgba(229, 229, 229, 1);
 }
 .card-footer {
     background-color: transparent;
     border-top: none;
     padding-bottom: 20px;
+}
+.card-text{
+    font-family: 'Montserrat';
+    font-size: 0.9rem;
 }

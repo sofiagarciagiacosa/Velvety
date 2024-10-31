@@ -1,0 +1,65 @@
+[
+    {
+        "categoria": "Hidratacion",
+        "productos": [
+            {
+                "id": 1,
+                "imgSrc": "/assets/pexels-photo-4056460.webp",
+                "title": "Glow Masque",
+                "text": "Mascarilla intensiva de hidratación con extractos naturales y ácido hialurónico.",
+                "price": 3500,
+                "buttonLabel": "Comprar"
+            },
+            {
+                "id": 2,
+                "imgSrc": "/assets/cremaHidratante.webp",
+                "title": "Aqua Cream",
+                "text": "Crema facial de textura sedosa con una fórmula enriquecida que nutre y suaviza la piel.",
+                "price": 14200,
+                "buttonLabel": "Comprar"
+            },
+            {
+                "id": 3,
+                "imgSrc": "/assets/serumHidratante.webp",
+                "title": "Radiance Serum",
+                "text": "Sérum ligero con vitamina C y ácido hialurónico.",
+                "price": 13800,
+                "buttonLabel": "Comprar"
+            },
+            {
+                "id": 4,
+                "imgSrc": "/assets/cremaManos.webp",
+                "title": "Body Silk",
+                "text": "Crema corporal ultra hidratante con manteca de karité y aceites esenciales.",
+                "price": 14500,
+                "buttonLabel": "Comprar"
+            }
+        ]
+    },
+    {
+        "categoria": "Limpieza",
+        "productos": [
+            {
+                "id": 5,
+                "imgSrc": "/assets/cleanser.webp",
+                "title": "Gentle Cleanser",
+                "text": "Limpiador facial suave para todo tipo de piel.",
+                "price": 5600,
+                "buttonLabel": "Comprar"
+            }
+        ]
+    },
+    {
+        "categoria": "Tratamientos",
+        "productos": [
+            {
+                "id": 6,
+                "imgSrc": "/assets/antiAgingSerum.webp",
+                "title": "Anti-Aging Serum",
+                "text": "Sérum antiedad con retinol y ácido hialurónico.",
+                "price": 17800,
+                "buttonLabel": "Comprar"
+            }
+        ]
+    }
+]

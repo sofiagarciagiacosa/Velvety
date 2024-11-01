@@ -1,6 +1,13 @@
-import { navbarComponent } from "./components/navbar.js"
-let  navContainer = document.querySelector('header')
+// index.js
+import { navbarComponent } from "./components/navbar.js";
+import { fetchTopSellingProducts } from "./components/carousel.js";
+
+let navContainer = document.querySelector('header');
 
 window.addEventListener('load', () => {
-    navContainer.innerHTML=navbarComponent
-})
+    // Cargar el componente de la barra de navegación
+    navContainer.innerHTML = navbarComponent;
+
+    // Cargar los productos más vendidos en el carrusel
+    fetchTopSellingProducts();
+});

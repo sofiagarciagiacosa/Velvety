@@ -8,7 +8,7 @@
                 "title": "Glow Masque",
                 "text": "Mascarilla intensiva de hidratación con extractos naturales y ácido hialurónico.",
                 "price": 3500,
-                "buttonLabel": "Comprar"
+                "soldQuantity": 120
             },
             {
                 "id": 2,
@@ -16,7 +16,7 @@
                 "title": "Aqua Cream",
                 "text": "Crema facial de textura sedosa con una fórmula enriquecida que nutre y suaviza la piel.",
                 "price": 14200,
-                "buttonLabel": "Comprar"
+                "soldQuantity": 250
             },
             {
                 "id": 3,
@@ -24,7 +24,7 @@
                 "title": "Radiance Serum",
                 "text": "Sérum ligero con vitamina C y ácido hialurónico.",
                 "price": 13800,
-                "buttonLabel": "Comprar"
+                "soldQuantity": 300
             },
             {
                 "id": 4,
@@ -32,7 +32,31 @@
                 "title": "Body Silk",
                 "text": "Crema corporal ultra hidratante con manteca de karité y aceites esenciales.",
                 "price": 14500,
-                "buttonLabel": "Comprar"
+                "soldQuantity": 200
+            },
+            {
+                "id": 22,
+                "imgSrc": "/assets/serumHidratanteExtra.webp",
+                "title": "Deep Hydration Serum",
+                "text": "Sérum intensivo para una hidratación profunda y duradera con extractos botánicos.",
+                "price": 15500,
+                "soldQuantity": 180
+            },
+            {
+                "id": 23,
+                "imgSrc": "/assets/cremaHidratanteIntensa.webp",
+                "title": "Intense Hydration Cream",
+                "text": "Crema hidratante rica y nutritiva ideal para piel seca y deshidratada.",
+                "price": 16200,
+                "soldQuantity": 220
+            },
+            {
+                "id": 24,
+                "imgSrc": "/assets/parchesOjos.webp",
+                "title": "Hydra Eye Patches",
+                "text": "Parches hidratantes para el contorno de ojos que reducen la hinchazón y las ojeras.",
+                "price": 3900,
+                "soldQuantity": 280
             }
         ]
     },
@@ -41,11 +65,67 @@
         "productos": [
             {
                 "id": 5,
-                "imgSrc": "/assets/cleanser.webp",
+                "imgSrc": "/assets/GentleCleanser.webp",
                 "title": "Gentle Cleanser",
                 "text": "Limpiador facial suave para todo tipo de piel.",
-                "price": 5600,
-                "buttonLabel": "Comprar"
+                "price": 6600,
+                "soldQuantity": 150
+            },
+            {
+                "id": 7,
+                "imgSrc": "/assets/ExfoliatingSoap.jpeg",
+                "title": "Exfoliating Soap",
+                "text": "Jabón exfoliante suave para una piel lisa y renovada, con partículas naturales de arroz.",
+                "price": 4300,
+                "soldQuantity": 190
+            },
+            {
+                "id": 9,
+                "imgSrc": "/assets/BathSalt.jpeg",
+                "title": "Lavender Bath Salt",
+                "text": "Sales de baño relajantes con aroma a lavanda para un descanso reparador.",
+                "price": 3700,
+                "soldQuantity": 160
+            },
+            {
+                "id": 10,
+                "imgSrc": "/assets/BodyScrub.webp",
+                "title": "Body Scrub",
+                "text": "Exfoliante corporal con azúcar y aceite de coco para una piel suave e hidratada.",
+                "price": 5200,
+                "soldQuantity": 210
+            },
+            {
+                "id": 11,
+                "imgSrc": "/assets/DetoxSoap.webp",
+                "title": "Detox Soap",
+                "text": "Jabón que purifica y detoxifica la piel profundamente.",
+                "price": 4800,
+                "soldQuantity": 130
+            },
+            {
+                "id": 12,
+                "imgSrc": "/assets/bathBomb.webp",
+                "title": "Lavender Bliss Bath Bomb",
+                "text": "Bomba de baño relajante con aroma a lavanda y aceites esenciales.",
+                "price": 3200,
+                "soldQuantity": 300
+            },
+            {
+                "id": 13,
+                "imgSrc": "/assets/gelLimpieza.webp",
+                "title": "Deep Clean Gel",
+                "text": "Gel de limpieza profunda que remueve impurezas y reduce el exceso de grasa.",
+                "price": 6800,
+                "soldQuantity": 240
+            },
+            {
+                "id": 14,
+                "imgSrc": "/assets/comboLimpieza.webp",
+                "title": "Combo Esencial de Limpieza",
+                "text": "Incluye un limpiador suave, exfoliante de uso diario, agua micelar y accesorios.",
+                "price": 15900,
+                "soldQuantity": 170
             }
         ]
     },
@@ -58,7 +138,63 @@
                 "title": "Anti-Aging Serum",
                 "text": "Sérum antiedad con retinol y ácido hialurónico.",
                 "price": 17800,
-                "buttonLabel": "Comprar"
+                "soldQuantity": 260
+            },
+            {
+                "id": 15,
+                "imgSrc": "/assets/tonico.webp",
+                "title": "Rosewater Tonic",
+                "text": "Tónico facial con agua de rosas que refresca, tonifica y equilibra el pH de la piel.",
+                "price": 4200,
+                "soldQuantity": 180
+            },
+            {
+                "id": 16,
+                "imgSrc": "/assets/cremaAntiedad.webp",
+                "title": "Age-Defy Cream",
+                "text": "Crema anti-edad rica en antioxidantes y péptidos para una piel más firme y radiante.",
+                "price": 16800,
+                "soldQuantity": 200
+            },
+            {
+                "id": 17,
+                "imgSrc": "/assets/rollerJade.jpeg",
+                "title": "Jade Roller",
+                "text": "Rodillo facial de jade que reduce la hinchazón y mejora la absorción de productos.",
+                "price": 4500,
+                "soldQuantity": 270
+            },
+            {
+                "id": 18,
+                "imgSrc": "/assets/protectorSolar.webp",
+                "title": "Sun Shield SPF 50+",
+                "text": "Protector solar de amplio espectro con acabado invisible para una protección diaria.",
+                "price": 8900,
+                "soldQuantity": 310
+            },
+            {
+                "id": 19,
+                "imgSrc": "/assets/kombuchaEssence.webp",
+                "title": "Kombucha Glow Essence",
+                "text": "Esencia fermentada con kombucha que revitaliza y equilibra la microbiota de la piel.",
+                "price": 7200,
+                "soldQuantity": 140
+            },
+            {
+                "id": 20,
+                "imgSrc": "/assets/guasha.webp",
+                "title": "Gua Sha de Cuarzo",
+                "text": "Piedra de Gua Sha de cuarzo que promueve la circulación y reduce la tensión facial.",
+                "price": 5300,
+                "soldQuantity": 120
+            },
+            {
+                "id": 21,
+                "imgSrc": "/assets/serumVitaminaC.jpeg",
+                "title": "Vitamin C Serum",
+                "text": "Sérum iluminador con vitamina C pura para un rostro radiante.",
+                "price": 13400,
+                "soldQuantity": 250
             }
         ]
     }

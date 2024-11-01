@@ -139,9 +139,7 @@ main{
     text-transform: uppercase;
     border-radius: 30px;
     width: 100%;
-    /* Ancho completo del botón solo para productos */
     text-align: center;
-    /* Centra el texto */
 }
 
 .btn-product:hover {
@@ -156,3 +154,30 @@ main{
     font-family: 'Montserrat';
     font-size: 0.9rem;
 }
+
+/* titulo categoria */
+.fw-bold{
+    font-family: 'Playfair Display';
+    font-size: 1.7rem;
+    font-weight: bold;
+    line-height: 50px;
+    letter-spacing: 0;
+}
+
+.text-muted{
+    font-family: 'Montserrat';
+    font-size: 0.7rem;
+    font-weight: bold;
+    letter-spacing: 5px;
+    line-height: 27.5px;
+    text-transform: uppercase;
+
+}
+
+/* carousel */
+.title-carousel{
+    font-size: 0.9rem;
+}
+.big-container{
+    background-color: #FAF9F6;
+} 

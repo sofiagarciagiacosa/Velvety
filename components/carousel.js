@@ -3,7 +3,7 @@ import { cardComponent } from "./card.js";
 export async function fetchTopSellingProducts() {
     try {
         // Cargar los datos desde el archivo JSON
-        const response = await fetch('/products.json');
+        const response = await fetch('/data/products.json');
         
         if (!response.ok) {
             throw new Error("Error en la respuesta de la solicitud");

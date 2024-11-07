@@ -181,3 +181,25 @@ main{
 .big-container{
     background-color: #FAF9F6;
 } 
+
+.dropdown-toggle {
+    background-color: white;
+    color: black;
+    border: none;
+}
+
+.dropdown-toggle:hover {
+    background-color: white;
+    color: black;
+}
+
+/* Sobrescribir estilos de Bootstrap cuando el botón está activo o tiene foco */
+.dropdown-toggle:active,
+.dropdown-toggle:focus {
+    background-color: white !important;
+    color: black !important;
+    box-shadow: none !important;
+    /* Elimina la sombra del foco */
+    outline: none !important;
+    /* Elimina el contorno del foco */
+}

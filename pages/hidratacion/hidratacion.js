@@ -15,7 +15,7 @@ window.addEventListener('load', () => {
 async function fetchProducts() {
     try {
         // Cargar los datos desde el archivo JSON
-        const response = await fetch('/products.json');
+        const response = await fetch('/data/products.json');
         const data = await response.json();
 
         // Filtra los productos de la categoría "Hidratacion"

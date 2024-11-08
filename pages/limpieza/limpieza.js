@@ -1,14 +1,27 @@
 import { navbarComponent } from "/components/navbar.js";
 import { cardComponent } from "/components/card.js";
+import { cartComponent } from "/components/cart.js";
 
 let navContainer = document.querySelector('header');
 let cardContainer = document.getElementById('cardContainer');
+let cartContainer =document.getElementById('cartContainer');
 
 window.addEventListener('load', () => {
     // Inserta el navbar
     navContainer.innerHTML = navbarComponent;
+    // Cargar el offcanvas del carrito
+    cartContainer.innerHTML = cartComponent;
     // Obtiene y renderiza los productos de hidratación
     fetchProducts();
+
+    // Selecciona el ícono del carrito en el navbar y configura el listener
+    const cartIcon = document.getElementById('cartIcon');
+    const offcanvasCart = new bootstrap.Offcanvas(document.getElementById('offcanvasRight'));
+
+    cartIcon.addEventListener('click', (event) => {
+        event.preventDefault();
+        offcanvasCart.show();
+    });
 });
 
 async function fetchProducts() {

@@ -35,7 +35,7 @@ export const navbarComponent= `
                                     return `<li class="nav-item">${e.customElement}</li>`;
                                 }
                                 return `<li class="nav-item">
-                                            <a class="nav-link" href="${e.link}">
+                                            <a class="nav-link" href="${e.link}" ${e.icon === 'bi bi-cart3' ? 'id="cartIcon"' : ''}>
                                                 ${e.icon ? `<i class="${e.icon}"></i>` : e.title}
                                             </a>
                                         </li>`;

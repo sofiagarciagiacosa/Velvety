@@ -5,6 +5,7 @@ const form= document.getElementById('login')
 
 window.addEventListener('load', () => {
     navContainer.innerHTML=navbarComponent
+
 })
 
 form.addEventListener('submit', (e) => {

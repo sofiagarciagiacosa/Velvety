@@ -2,6 +2,7 @@
 import { navbarComponent } from "./components/navbar.js";
 import { fetchTopSellingProducts } from "./components/carousel.js";
 import { cartComponent } from "./components/cart.js";
+import { addItemToCart, updateCartDisplay } from "./pages/items/items.js";
 
 let navContainer = document.querySelector('header');
 let cartContainer =document.getElementById('cartContainer');
@@ -15,6 +16,8 @@ window.addEventListener('load', () => {
 
     // Cargar los productos más vendidos en el carrusel
     fetchTopSellingProducts();
+    // Actualizar la visualización del carrito al cargar la página
+    updateCartDisplay();
 
     // Selecciona el ícono del carrito en el navbar y configura el listener
     const cartIcon = document.getElementById('cartIcon');

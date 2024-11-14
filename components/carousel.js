@@ -1,4 +1,5 @@
 import { cardComponent } from "./card.js";
+import { addItemToCart, updateCartDisplay } from "../pages/items/items.js";
 
 export async function fetchTopSellingProducts() {
     try {
@@ -30,7 +31,7 @@ export async function fetchTopSellingProducts() {
                     <div class="row row-cols-1 row-cols-md-3 g-4">
                         ${group.map(card => {
                             return `<div class="col">
-                                ${cardComponent(card.imgSrc, card.title, card.text, `Comprar - $${card.price}`)}
+                                ${cardComponent(card.imgSrc, card.title, card.text, `Comprar`, card.price)}
                             </div>`;
                         }).join('')}
                     </div>
@@ -42,6 +43,24 @@ export async function fetchTopSellingProducts() {
         const carouselInner = document.getElementById('carouselInner');
         if (carouselInner) {
             carouselInner.innerHTML = cardsHtml;
+
+            // Configura los botones de "Comprar" para agregar productos al carrito
+            const addToCartButtons = carouselInner.querySelectorAll('.add-to-cart-btn');
+            const offcanvasCart = new bootstrap.Offcanvas(document.getElementById('offcanvasRight'));
+
+            addToCartButtons.forEach(button => {
+                button.addEventListener('click', (event) => {
+                    event.preventDefault();
+                    const product = {
+                        imgSrc: button.getAttribute('data-imgsrc'),
+                        title: button.getAttribute('data-title'),
+                        price: parseFloat(button.getAttribute('data-price')),
+                    };
+                    addItemToCart(product);
+                    offcanvasCart.show();
+                    updateCartDisplay();
+                });
+            });
         }
     } catch (error) {
         console.error("Error al cargar los productos:", error);

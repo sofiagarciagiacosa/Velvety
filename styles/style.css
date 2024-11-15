@@ -188,12 +188,13 @@ main{
     border: none;
 }
 
+/*carrito */
+
 .dropdown-toggle:hover {
     background-color: white;
     color: black;
 }
 
-/* Sobrescribir estilos de Bootstrap cuando el botón está activo o tiene foco */
 .dropdown-toggle:active,
 .dropdown-toggle:focus {
     background-color: white !important;
@@ -202,4 +203,67 @@ main{
     /* Elimina la sombra del foco */
     outline: none !important;
     /* Elimina el contorno del foco */
+}
+
+.offcanvas{
+    background-color: #FAF9F6;
+}
+
+.offcanvas-title, .offcanvas-footer h5{
+    font-family: 'Montserrat';
+    font-size: 0.9rem;
+    font-weight: bold;
+    letter-spacing: 5px;
+    line-height: 27.5px;
+    text-transform: uppercase;
+}
+
+.divider {
+    border-top: 1.5px solid rgba(229, 229, 229, 1);
+    margin: 5px 0;
+}
+
+.btn-cart{
+    
+    background-color: rgba(218, 138, 103, 1);
+    color: white;
+    transition: background-color 0.3s ease;
+    font-family: 'Montserrat';
+    font-size: 0.7rem;
+    font-weight: bold;
+    letter-spacing: 5px;
+    line-height: 27.5px;
+    text-transform: uppercase;
+    border-radius: 30px;
+    width: 100%;
+    text-align: center;
+}
+
+.btn-cart:hover {
+    background-color: rgba(229, 229, 229, 1);
+}
+
+.cart-item-title{
+    font-family: 'Playfair Display';
+    font-weight: bold;
+    font-size: 1.1rem;
+    line-height: 27.5px;
+    letter-spacing: 0;
+    text-transform: capitalize;
+    width: 100%;
+}
+.remove-item{
+    cursor: pointer;
+    text-decoration: underline;
+    color: black;
+}
+.remove-item:hover {
+    color: rgba(142, 77, 41, 1);
+}
+.cart-item-img {
+    width: 70px !important;
+    height: 90px !important;
+    object-fit: cover;
+    /* Asegura que la imagen se recorte de forma proporcional sin distorsión */
+    border-radius: 5px;
 }

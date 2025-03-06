@@ -1,0 +1,28 @@
+[
+    {
+        "code": "VELVETY20",
+        "discount": "20%",
+        "condition": "en tu primera compra",
+        "minAmount": 0,
+        "special": true
+    },
+    {
+        "code": "VELVETY35",
+        "discount": "35%",
+        "condition": "en compras mayores a $50000",
+        "minAmount": 50000,
+        "special": true
+    },
+    {
+        "code": "VELVETY10",
+        "discount": "10%",
+        "condition": "solo para nuevos clientes",
+        "special": false
+    },
+    {
+        "code": "ENVIOGRATIS",
+        "discount": "Envío Gratis",
+        "condition": "en compras mayores a $40000",
+        "special": false
+    }
+]

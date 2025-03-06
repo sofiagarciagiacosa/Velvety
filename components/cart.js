@@ -12,6 +12,10 @@ export const cartComponent= `
             </div>
             <div class="divider"></div>
             <div class="offcanvas-footer mt-3">
+                <div class="mb-3">
+                    <input type="text" id="discountCode" class="form-control" placeholder="Código de descuento">
+                    <button type="button" class="btn btn-sm btn-primary mt-2" id="applyDiscount">Aplicar</button>
+                </div>
                 <h5>Total: $<span id="cartTotal">0.00</span></h5>
                 <button type="button" class="btn btn-cart" id="checkoutButton">iniciar compra</button>
             </div>

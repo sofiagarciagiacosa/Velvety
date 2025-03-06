@@ -109,12 +109,12 @@ main{
     padding: 1rem;
 }
 .text-center{
-    font-family: 'Montserrat';
-    font-size: 1.15rem;
-    font-weight: bold;
-    letter-spacing: 8px;
-    line-height: 27.5px;
-    text-transform: uppercase;
+    font-family: 'Montserrat', sans-serif !important;
+    font-size: 1.15rem !important;
+    font-weight: bold !important;
+    letter-spacing: 8px !important;
+    line-height: 27.5px !important;
+    text-transform: uppercase !important;
 }
 
 /* tarjetas de productos */
@@ -266,4 +266,56 @@ main{
     object-fit: cover;
     /* Asegura que la imagen se recorte de forma proporcional sin distorsión */
     border-radius: 5px;
+}
+
+
+/* Cupones */
+
+#specialCouponsContainer {
+    position: fixed;
+    bottom: 0px;
+    /* Establece la distancia desde la parte inferior de la pantalla */
+    left: 0px;
+    /* Establece la distancia desde la parte izquierda de la pantalla */
+    display: flex;
+    flex-direction: column;
+    /* Apilar los cupones uno encima del otro */
+    align-items: flex-start;
+    /* Alineación a la izquierda */
+    gap: 0;
+    /* Espacio entre los banners */
+    z-index: 1050;
+    padding: 2px;
+}
+
+.coupon-banner {
+    background-color: #FAF9F6;
+    font-size: 12px;
+    padding: 5px;
+    border-radius: 5px;
+    width: 100%;
+    max-width: 300px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-sizing: border-box;
+    opacity: 1;
+    z-index: 1051;
+}
+.modal-background {
+    background-color: #FAF9F6;
+    
+}
+.modal-content,
+.modal-content * {
+    color: black !important;
+}
+.modal-text {
+    font-family: 'Montserrat';
+    font-size: 15px;
+    line-height: 27.5px;
+    letter-spacing: 0;
+    color: black;
+    text-transform:initial;
+    font-weight:normal;
 }

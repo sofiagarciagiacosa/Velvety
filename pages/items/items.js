@@ -1,7 +1,90 @@
 import { getData, setData } from "../../utils/localStorage.js";
 import { cartItemComponent } from "../../components/cartItem.js";
+import { cartComponent } from "../../components/cart.js";
+
+document.getElementById('cartContainer').innerHTML = cartComponent;
 
 
+// Función para cargar cupones desde el JSON
+export async function loadCouponsForCart() {
+    try {
+        const response = await fetch('../../data/coupons.json');
+        if (!response.ok) throw new Error('No se pudo cargar el archivo JSON');
+        const coupons = await response.json();
+        console.log(coupons); // Verifica si los cupones están siendo cargados correctamente
+        return coupons;
+    } catch (error) {
+        console.error('Error al cargar cupones:', error);
+        return [];
+    }
+}
+
+
+// Función para aplicar el descuento y calcular el total
+export async function applyCouponAndCalculateTotal(couponCode) {
+    const cartItems = getData("cartItems") || [];
+    let total = cartItems.reduce((sum, item) => sum + item.price * item.quantity, 0);
+
+    // Cargar los cupones
+    const coupons = await loadCouponsForCart(); 
+
+    const coupon = coupons.find(coupon => coupon.code === couponCode);
+    if (!coupon) {
+        alert("Cupón no válido");
+        return total;
+    }
+
+
+    if (coupon.discount === "Envío Gratis" && total >= 40000) {
+        alert("¡Envío gratis aplicado!");
+        return total; 
+    }
+
+    if (coupon.discount !== "Envío Gratis") {
+        if (total >= (coupon.minAmount || 0)) {
+            const discount = (total * coupon.discount) / 100;
+            alert(`¡Descuento de ${coupon.discount}% aplicado!`);
+
+            // Guardar el cupón aplicado
+            setData("appliedCoupon", couponCode);
+            updateCouponMessage(couponCode);
+            
+
+            return total - discount;
+        } else {
+            alert("No cumples con las condiciones del cupón");
+        }
+    }
+
+    return total;
+}
+function updateCouponMessage(couponCode) {
+    const couponMessage = document.getElementById("appliedCouponMessage");
+    const removeCouponBtn = document.getElementById("removeCoupon");
+    if (couponText && removeCouponBtn) {
+        couponText.textContent = `Cupón en uso: ${couponCode}`;
+        removeCouponBtn.style.display = "inline"; // Mostrar el botón de eliminar
+    }
+}
+// Función para eliminar el cupón
+// Función para eliminar el cupón
+function removeCoupon() {
+    const couponText = document.getElementById("couponText");
+    const removeCouponBtn = document.getElementById("removeCoupon");
+
+    if (couponText && removeCouponBtn) {
+        couponText.textContent = ""; // Limpiar mensaje
+        removeCouponBtn.style.display = "none"; // Ocultar botón
+    }
+
+    // Eliminar el cupón del localStorage
+    setData("appliedCoupon", null);
+
+    // Recalcular el total sin descuento
+    const cartItems = getData("cartItems") || [];
+    const total = cartItems.reduce((sum, item) => sum + item.price * item.quantity, 0);
+    updateCartTotal(total);
+}
 
 // Agregar producto al carrito en localStorage
 export function addItemToCart(product) {
@@ -18,12 +101,14 @@ export function addItemToCart(product) {
     updateCartDisplay();
 }
 
+
 // Actualizar el total del carrito en el DOM
-function updateCartTotal() {
+export function updateCartTotal(totalConDescuento = null) {
     const items = getData("cartItems") || [];
-    const total = items.reduce((sum, item) => sum + item.price * item.quantity, 0);
+    const total = totalConDescuento !== null ? totalConDescuento : items.reduce((sum, item) => sum + item.price * item.quantity, 0);
     document.getElementById("cartTotal").textContent = total.toFixed(2);
 }
+
 
 
 // Actualizar la visualización del carrito en el DOM
@@ -76,12 +161,25 @@ export function updateCartDisplay() {
 
 
 
-
-
-
 // Inicializar el carrito al cargar la página
 window.addEventListener('load', () => {
-    updateCartDisplay();     // Mostrar el carrito actualizado al cargar la página
+    
+    updateCartDisplay();
+    
+});
+document.addEventListener('DOMContentLoaded', () => {
+    const applyDiscountButton = document.getElementById('applyDiscount');
+    if (applyDiscountButton) {
+        applyDiscountButton.addEventListener('click', async () => {
+            const couponCode = document.getElementById('discountCode').value.trim();
+            const totalConDescuento = await applyCouponAndCalculateTotal(couponCode);
+            updateCartTotal(totalConDescuento);
+        });
+    }
+    const removeCouponBtn = document.getElementById("removeCoupon");
+    if (removeCouponBtn) {
+        removeCouponBtn.addEventListener("click", removeCoupon);
+    }
 });
 
 

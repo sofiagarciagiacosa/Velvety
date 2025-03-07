@@ -319,3 +319,46 @@ main{
     text-transform:initial;
     font-weight:normal;
 }
+
+.btn-primary{
+    background-color: #E5E5E5;
+    color: black;
+    transition: background-color 0.3s ease;
+    font-family: 'Montserrat';
+    font-size: 0.6rem;
+    font-weight: bold;
+    letter-spacing: 3px;
+    line-height: 27.5px;
+    text-transform: uppercase;
+    border-radius: 30px;
+    border-color: #E5E5E5;
+}
+.btn-primary:hover {
+    background-color: rgba(229, 229, 229, 1);
+    border-color: #E5E5E5;
+    
+}
+#discountCode {
+    font-family: 'Montserrat';
+    font-size: 14px;
+    line-height: 27.5px;
+    letter-spacing: 0;
+    color: black;
+    text-transform: initial;
+    font-weight: normal;
+}
+
+#discountCode:focus {
+    color: black;
+    /* Color del texto al hacer focus */
+    border-color: #FAF9F6;
+    /* Color del borde en focus */
+    outline: none;
+    /* Asegura que no aparezca el contorno en foco */
+    background-color: #FAF9F6
+}
+
+#discountCode::placeholder {
+    color: black;
+    /* Cambia el color del placeholder */
+}

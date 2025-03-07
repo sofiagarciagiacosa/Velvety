@@ -17,7 +17,7 @@ export function createCouponComponent(coupon) {
                         <h1 class="modal-title fs-5 text-muted text-center w-100 p-2 m-2">PORQUE LO MERECÉS</h1>
                         <p class= "modal-text p-2 m-2">  Tenemos una oferta especial para vos. </p>
                         <p class= "modal-text p-2 m-2">  Usa el código <strong>${coupon.code}</strong> ${coupon.condition} para un 
-                        <strong>${coupon.discount} de descuento</strong>. </p>
+                        <strong>${coupon.discount}% de descuento</strong>. </p>
                         <p class= "modal-text mt-3 mb-1 p-3">  *Los cupones no son acumulables* </p>
                        
                         

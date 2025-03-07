@@ -2,6 +2,7 @@ import { navbarComponent } from "/components/navbar.js";
 import { cardComponent } from "/components/card.js";
 import { cartComponent } from "/components/cart.js";
 import { addItemToCart, updateCartDisplay } from "../items/items.js";
+import { applyCouponAndCalculateTotal, updateCartTotal, loadCouponsForCart } from "../items/items.js";
 
 let navContainer = document.querySelector('header');
 let cardContainer = document.getElementById('cardContainer');
@@ -24,6 +25,17 @@ window.addEventListener('load', () => {
         event.preventDefault();
         offcanvasCart.show();
     });
+    // Ahora agregamos el event listener para el botón de descuento
+    const applyDiscountButton = document.getElementById('applyDiscount');
+    if (applyDiscountButton) {
+        applyDiscountButton.addEventListener('click', async () => {
+            const couponCode = document.getElementById('discountCode').value.trim();
+            const totalConDescuento = await applyCouponAndCalculateTotal(couponCode);
+            updateCartTotal(totalConDescuento);
+        });
+    
+    }    
+    
 });
 
 async function fetchProducts() {

@@ -19,7 +19,7 @@ export const cartComponent= `
                 <div class="mb-1 d-flex align-items-center">
                     <p id="appliedCouponMessage" class="text-muted  m-2"> 
                         <span id="couponText" class="modal-text"></span> 
-                        <span id="removeCoupon" class="text-danger m-2" style="cursor: pointer; display: none;">Eliminar cupón</span>
+                        <span id="removeCoupon" class="text-danger m-2 remove-item" style="cursor: pointer; display: none;">Eliminar cupón</span>
                     </p>
                 </div>
                 <h5>Total: $<span id="cartTotal">0.00</span></h5>

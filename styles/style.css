@@ -362,3 +362,12 @@ main{
     color: black;
     /* Cambia el color del placeholder */
 }
+#removeCoupon{
+    font-family: 'Montserrat';
+    font-size: 14px;
+    line-height: 27.5px;
+    letter-spacing: 0;
+    color: #8E4D29 !important;
+    text-transform: initial;
+    font-weight: normal;
+}

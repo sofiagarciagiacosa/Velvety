@@ -2,13 +2,13 @@ import { createCouponComponent } from "./couponItem.js";
 
 export async function loadCoupons() {
     try {
-        const response = await fetch("./data/coupons.json");  
+        const response = await fetch("/data/coupons.json");  
         const coupons = await response.json();
 
         let specialContainer = document.getElementById("specialCouponsContainer");
 
         if (!specialContainer) {
-            console.error("❌ ERROR: No se encontró el contenedor de cupones especiales.");
+            console.error("ERROR: No se encontró el contenedor de cupones especiales.");
             return;
         }
 
@@ -17,7 +17,7 @@ export async function loadCoupons() {
 
         // Si no hay cupones especiales, no hacemos nada
         if (specialCoupons.length === 0) {
-            console.log("❌ No hay cupones especiales.");
+            console.log("No hay cupones especiales.");
             return;
         }
 
@@ -48,6 +48,6 @@ export async function loadCoupons() {
         });
 
     } catch (error) {
-        console.error("❌ Error al cargar los cupones:", error);
+        console.error("Error al cargar los cupones:", error);
     }
 }

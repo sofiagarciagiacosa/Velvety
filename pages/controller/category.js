@@ -2,6 +2,7 @@ import { navbarComponent } from "/components/navbar.js";
 import { cardComponent } from "/components/card.js";
 import { cartComponent } from "/components/cart.js";
 import { addItemToCart, updateCartDisplay } from "../items/items.js";
+import { loadCoupons } from "/components/coupon.js";
 import { applyCouponAndCalculateTotal, updateCartTotal, loadCouponsForCart } from "../items/items.js";
 
 let navContainer = document.querySelector('header');
@@ -17,6 +18,27 @@ window.addEventListener('load', () => {
 
     // Carga los productos según la categoría obtenida
     fetchProducts();
+
+    loadCouponsForCart();  // Espera a que los cupones se carguen
+    
+    loadCoupons();  // Ahora que los cupones están cargados, carga los cupones especiales
+
+    // Configurar eventos una vez que el cupón está en el DOM
+    const discountBanner = document.getElementById("discountBanner");
+    const closeBanner = document.getElementById("closeBanner");
+    if (discountBanner) {
+        discountBanner.addEventListener("click", () => {
+            const discountModal = new bootstrap.Modal(document.getElementById("discountModal"));
+             discountModal.show();
+        });
+
+        closeBanner.addEventListener("click", (event) => {
+            event.stopPropagation();
+            discountBanner.style.display = "none";
+        });
+    }
+    
+    
 
     const cartIcon = document.getElementById('cartIcon');
     const offcanvasCart = new bootstrap.Offcanvas(document.getElementById('offcanvasRight'));
@@ -35,6 +57,11 @@ window.addEventListener('load', () => {
         });
     
     }    
+    // Asegurar que el evento de eliminar cupón esté activo
+    const removeCouponBtn = document.getElementById("removeCoupon");
+    if (removeCouponBtn) {
+        removeCouponBtn.addEventListener("click", removeCoupon);
+    }
     
 });
 

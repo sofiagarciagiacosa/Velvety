@@ -59,16 +59,22 @@ export async function applyCouponAndCalculateTotal(couponCode) {
     return total;
 }
 function updateCouponMessage(couponCode) {
-    const couponMessage = document.getElementById("appliedCouponMessage");
+    const couponText = document.getElementById("couponText");
     const removeCouponBtn = document.getElementById("removeCoupon");
+
     if (couponText && removeCouponBtn) {
         couponText.textContent = `Cupón en uso: ${couponCode}`;
-        removeCouponBtn.style.display = "inline"; // Mostrar el botón de eliminar
+        removeCouponBtn.style.display = "inline";
+        
+        // Asegurar que se asigne el evento correctamente
+        removeCouponBtn.removeEventListener("click", removeCoupon);
+        removeCouponBtn.addEventListener("click", removeCoupon);
     }
 }
-// Función para eliminar el cupón
+
 // Función para eliminar el cupón
 function removeCoupon() {
+    console.log("Eliminando cupón...");
     const couponText = document.getElementById("couponText");
     const removeCouponBtn = document.getElementById("removeCoupon");
 
@@ -83,7 +89,7 @@ function removeCoupon() {
     // Recalcular el total sin descuento
     const cartItems = getData("cartItems") || [];
     const total = cartItems.reduce((sum, item) => sum + item.price * item.quantity, 0);
-    updateCartTotal(total);
+    updateCartTotal(total);  // Esto actualizará correctamente el total en el DOM
 }
 
 // Agregar producto al carrito en localStorage

@@ -53,7 +53,7 @@ window.addEventListener('load', async () => {
             offcanvasCart.show();
         });
 
-        // Ahora agregamos el event listener para el botón de descuento
+        // Agregamos el event listener para el botón de descuento
         const applyDiscountButton = document.getElementById('applyDiscount');
         if (applyDiscountButton) {
             applyDiscountButton.addEventListener('click', async () => {
@@ -62,7 +62,11 @@ window.addEventListener('load', async () => {
                 updateCartTotal(totalConDescuento);
             });
         }
-        
+        // Asegurar que el evento de eliminar cupón esté activo
+        const removeCouponBtn = document.getElementById("removeCoupon");
+        if (removeCouponBtn) {
+            removeCouponBtn.addEventListener("click", removeCoupon);
+        }
         
 
     } catch (error) {

@@ -1,0 +1,18 @@
+{
+  "name": "velvety",
+  "version": "1.0.0",
+  "description": "FIGMA \r https://www.figma.com/design/UZyBdOmtOjqEWCI97eIkbZ/Velvety--Figma-Sofia?node-id=0-1&node-type=canvas&t=GCL3OBAs6rCVcI92-0",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "node --watch index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^16.5.0",
+    "express": "^5.1.0"
+  }
+}

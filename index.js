@@ -1,75 +1,28 @@
-// index.js
-import { navbarComponent } from "./components/navbar.js";
-import { fetchTopSellingProducts } from "./components/carousel.js";
-import { cartComponent } from "./components/cart.js";
-import { addItemToCart, updateCartDisplay } from "./pages/items/items.js";
-import { loadCoupons } from "./components/coupon.js";
-import { applyCouponAndCalculateTotal, updateCartTotal, loadCouponsForCart } from "./pages/items/items.js";
+import express from "express"
+import dotenv from "dotenv"
+import usersRouter from "./Server/Routes/users.routes.js"
+import productsRouter from "./Server/Routes/products.routes.js"
+import couponsRouter from "./Server/Routes/coupons.routes.js"
 
-let navContainer = document.querySelector('header');
-let cartContainer =document.getElementById('cartContainer');
+//traer variables de entorno
+dotenv.config()
 
+//crear instancia
+const app = express()
 
-window.addEventListener('load', async () => {
-    try {
-        // Cargar el componente de la barra de navegación
-        navContainer.innerHTML = navbarComponent;
+//configurar puerto
+const port = process.env.PORT || 3000
 
-        // Cargar el offcanvas del carrito
-        cartContainer.innerHTML = cartComponent;
+//para poder leer json
+app.use(express.json());
 
-        // Asegurarse de que los cupones se carguen antes de continuar
-        await loadCouponsForCart();  // Espera a que los cupones se carguen
+//levantar el servidor
+app.listen(port, ()=>{
+    console.log(`Servidor levantado en puerto ${port}`)
+})
 
-        loadCoupons();  // Ahora que los cupones están cargados, carga los cupones especiales
+//rutas de usuarios
+app.use("/user", usersRouter)
+app.use("/product", productsRouter)
+app.use("/coupon", couponsRouter )
 
-        // Cargar los productos más vendidos en el carrusel
-        fetchTopSellingProducts();
-
-        // Actualizar la visualización del carrito al cargar la página
-        updateCartDisplay();
-
-        // Configurar eventos una vez que el cupón está en el DOM
-        const discountBanner = document.getElementById("discountBanner");
-        const closeBanner = document.getElementById("closeBanner");
-        if (discountBanner) {
-            discountBanner.addEventListener("click", () => {
-                const discountModal = new bootstrap.Modal(document.getElementById("discountModal"));
-                discountModal.show();
-            });
-
-            closeBanner.addEventListener("click", (event) => {
-                event.stopPropagation();
-                discountBanner.style.display = "none";
-            });
-        }
-
-        // Selecciona el ícono del carrito en el navbar y configura el listener
-        const cartIcon = document.getElementById('cartIcon');
-        const offcanvasCart = new bootstrap.Offcanvas(document.getElementById('offcanvasRight'));
-
-        cartIcon.addEventListener('click', (event) => {
-            event.preventDefault();
-            offcanvasCart.show();
-        });
-
-        // Agregamos el event listener para el botón de descuento
-        const applyDiscountButton = document.getElementById('applyDiscount');
-        if (applyDiscountButton) {
-            applyDiscountButton.addEventListener('click', async () => {
-                const couponCode = document.getElementById('discountCode').value.trim();
-                const totalConDescuento = await applyCouponAndCalculateTotal(couponCode);
-                updateCartTotal(totalConDescuento);
-            });
-        }
-        // Asegurar que el evento de eliminar cupón esté activo
-        const removeCouponBtn = document.getElementById("removeCoupon");
-        if (removeCouponBtn) {
-            removeCouponBtn.addEventListener("click", removeCoupon);
-        }
-        
-
-    } catch (error) {
-        console.error("Error al cargar los cupones o el contenido de la página:", error);
-    }
-});

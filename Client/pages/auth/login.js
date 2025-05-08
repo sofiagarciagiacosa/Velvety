@@ -20,7 +20,7 @@ form.addEventListener('submit', (e) => {
             //session storage
             sessionStorage.setItem('userData', JSON.stringify(user))
             console.log('user');
-            window.location.href = 'http://127.0.0.1:5500/index.html';
+            window.location.href = "http://localhost:5000/index.html";
 
         } else {
             console.log('Usuario no encontrado o credenciales incorrectas');

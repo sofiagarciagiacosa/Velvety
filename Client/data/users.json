@@ -22,5 +22,37 @@
     "email": "lucia.martinez@example.com",
     "password": "lucia!456",
     "birthDate": "1988-03-02"
+  },
+  {
+    "id": 4,
+    "firstName": "Franco",
+    "lastName": "Colapinto",
+    "email": "franquito@gmail.com",
+    "password": "franco123",
+    "birthDate": "2000-09-12"
+  },
+  {
+    "id": 5,
+    "firstName": "Paula",
+    "lastName": "Pronino",
+    "email": "pau@gmail.com",
+    "password": "pau123",
+    "birthDate": "1996-10-11"
+  },
+  {
+    "id": 6,
+    "firstName": "Virgina",
+    "lastName": "Pronino",
+    "email": "vir@gmail.com",
+    "password": "viqui!!",
+    "birthDate": "1996-10-11"
+  },
+  {
+    "id": 7,
+    "firstName": "Agostina",
+    "lastName": "Dagatti",
+    "email": "agui@gmail.com",
+    "password": "agos123.",
+    "birthDate": "1997-07-16"
   }
 ]

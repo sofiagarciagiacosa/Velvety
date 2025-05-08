@@ -3,7 +3,7 @@ import { getUserData } from "../pages/auth/account.js";
 import { renderUserCard } from "../pages/auth/account.js";
 import { logOut } from "../pages/auth/account.js";
 
-const url= 'http://127.0.0.1:5500/'
+const url = "http://localhost:5000/";
 const userInfo = getUserData('userData');
 
 
@@ -58,6 +58,6 @@ document.addEventListener('click', (event) => {
     if (event.target.id === 'btnLogOut') {
         logOut('userData');
         console.log("Sesión cerrada");
-        window.location.href = 'http://127.0.0.1:5500/pages/auth/login.html';
+        window.location.href = "http://localhost:5000/pages/auth/login.html";
     }
 });

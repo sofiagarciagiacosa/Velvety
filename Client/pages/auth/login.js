@@ -8,25 +8,33 @@ window.addEventListener('load', () => {
 
 })
 
-form.addEventListener('submit', (e) => {
-    e.preventDefault()
-    let userEmail= document.getElementById('floatingInput').value
-    let userPassword= document.getElementById('floatingPassword').value
+form.addEventListener("submit", async (e) => {
+  e.preventDefault();
 
-    fetch('/data/users.json').then(res => res.json()).then(users =>{
-        const user = users.find(e => e.email === userEmail && e.password === userPassword)
+  let userEmail = document.getElementById("floatingInput").value;
+  let userPassword = document.getElementById("floatingPassword").value;
 
-        if(user){
-            //session storage
-            sessionStorage.setItem('userData', JSON.stringify(user))
-            console.log('user');
-            window.location.href = "http://localhost:5000/index.html";
+  try {
+    const response = await fetch("/account/login", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ email: userEmail, password: userPassword }),
+    });
 
-        } else {
-            console.log('Usuario no encontrado o credenciales incorrectas');
-        }
+    const result = await response.json();
 
-    }) 
-
+    if (response.ok) {
+      sessionStorage.setItem("userData", JSON.stringify(result.user));
+      window.location.href = "http://localhost:5000/index.html";
+    } else {
+      alert(result.message || "Error al iniciar sesión");
+    }
+  } catch (error) {
+    console.error("Error en login:", error);
+    alert("Ocurrió un error al intentar iniciar sesión.");
+  }
 });
+  
 

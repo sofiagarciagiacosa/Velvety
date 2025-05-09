@@ -54,5 +54,13 @@
     "email": "agui@gmail.com",
     "password": "agos123.",
     "birthDate": "1997-07-16"
+  },
+  {
+    "id": 8,
+    "firstName": "Alice",
+    "lastName": "Bedon",
+    "email": "ali@gmail.com",
+    "password": "ali1.",
+    "birthDate": "1997-05-11"
   }
 ]

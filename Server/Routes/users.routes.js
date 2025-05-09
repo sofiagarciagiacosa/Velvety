@@ -76,7 +76,7 @@ router.post("/registro", async (req, res) => {
 });
 
 
-// POST para login del usuario (act de prueba)
+// POST para login del usuario 
 router.post("/login", async (req, res) => {
     try {
         const { email, password } = req.body;

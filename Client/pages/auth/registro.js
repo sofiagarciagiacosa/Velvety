@@ -18,7 +18,7 @@ document.querySelector("form").addEventListener("submit", async (e) => {
   const newUser = { firstName, lastName, email, password, birthDate };
 
   try {
-    const response = await fetch("http://localhost:5000/registro", { 
+    const response = await fetch("http://localhost:5000/account/registro", { 
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(newUser),

@@ -25,7 +25,7 @@ app.listen(port, ()=>{
 app.use(express.static('./Client'))
 
 //rutas de usuarios end-point
-app.use("/", usersRouter)
+app.use("/account", usersRouter)
 app.use("/product", productsRouter)
 app.use("/coupon", couponsRouter )
 

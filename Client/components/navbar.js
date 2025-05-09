@@ -7,15 +7,20 @@ const url = "http://localhost:5000/";
 const userInfo = getUserData('userData');
 
 
-const elements= [
-    {title: 'Hidratación', link:`${url}pages/hidratacion/hidratacion.html`},
-    {title: 'Limpieza', link:`${url}pages/limpieza/limpieza.html`},
-    {title: 'Tratamientos', link:`${url}pages/tratamientos/tratamientos.html`},
-    userInfo 
-        ? { customElement: userCard(userInfo) }  // Renderiza userCard si el usuario está logueado
-        : { title: 'Login', link: `${url}pages/auth/login.html`, icon: 'bi bi-person' },
-    {title: 'Carrito', link:`${url}#`, icon: 'bi bi-cart3'}
-]
+const elements = [
+  { title: "Hidratación", link: `${url}pages/hidratacion/hidratacion.html` },
+  { title: "Limpieza", link: `${url}pages/limpieza/limpieza.html` },
+  { title: "Tratamientos", link: `${url}pages/tratamientos/tratamientos.html` },
+  { title: "Shop All", link: `${url}pages/tratamientos/productos.html` },
+  userInfo
+    ? { customElement: userCard(userInfo) } // Renderiza userCard si el usuario está logueado
+    : {
+        title: "Login",
+        link: `${url}pages/auth/login.html`,
+        icon: "bi bi-person",
+      },
+  { title: "Carrito", link: `${url}#`, icon: "bi bi-cart3" },
+];
 
 
 export const navbarComponent= `

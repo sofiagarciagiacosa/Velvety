@@ -4,18 +4,21 @@ import { cartComponent } from "/components/cart.js";
 import { addItemToCart, updateCartDisplay } from "../items/items.js";
 import { loadCoupons } from "/components/coupon.js";
 import { applyCouponAndCalculateTotal, updateCartTotal, loadCouponsForCart } from "../items/items.js";
+import { initProductControls } from "../productos/productos.js";
 
 let navContainer = document.querySelector('header');
 let cardContainer = document.getElementById('cardContainer');
 let cartContainer = document.getElementById('cartContainer');
 
 // Obtiene la categoría desde el atributo data-category del body
-const category = document.body.getAttribute('data-category');
+const category = document.body.getAttribute("data-category");
 
 window.addEventListener('load', () => {
     navContainer.innerHTML = navbarComponent;
     cartContainer.innerHTML = cartComponent;
 
+    // Inicializa filtros y sort
+    initProductControls(fetchProducts);
     // Carga los productos según la categoría obtenida
     fetchProducts();
 
@@ -63,25 +66,48 @@ window.addEventListener('load', () => {
         removeCouponBtn.addEventListener("click", removeCoupon);
     }
     
+    
 });
 
-async function fetchProducts() {
+export async function fetchProducts() {
+    const category = document.body.getAttribute("data-category");
     try {
         const response = await fetch('/data/products.json');
         const data = await response.json();
 
-        // Utiliza la categoría obtenida dinámicamente
-        const products = data.find(categoryObj => categoryObj.categoria === category).productos;
+        let allProducts = [];
+
+        if (category === "All") {
+          // Juntar todos los productos de todas las categorías
+          data.forEach((cat) => {
+            allProducts = allProducts.concat(cat.productos);
+          });
+        } else {
+          const categoryData = data.find((cat) => cat.categoria === category);
+          if (categoryData) {
+            allProducts = categoryData.productos;
+          }
+        }
+        
 
         let cardsHtml = `<div class="row row-cols-1 row-cols-md-3 g-4">`;
-        cardsHtml += products.map(product => {
+        cardsHtml += allProducts
+          .map((product) => {
             return `
                 <div class="col">
-                    ${cardComponent(product.imgSrc, product.title, product.text, "Comprar", product.price)}
+                    ${cardComponent(
+                      product.imgSrc,
+                      product.title,
+                      product.text,
+                      "Comprar",
+                      product.price
+                    )}
                 </div>
             `;
-        }).join('');
+          })
+          .join("");
         cardsHtml += `</div>`;
+
 
         cardContainer.innerHTML = cardsHtml;
 

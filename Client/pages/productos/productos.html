@@ -13,23 +13,53 @@
         @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
     </style>
 </head>
-<body data-category="">
+<body data-category="All">
     <header>
 
     </header>
-    <main>
+    <main >
         <div class="container mt-5 ">
             <div class="category-header mt-5">
                 <h5 class="text-muted mb-0 mt-5">Explora nuestros productos</h5>
                 <h4 class="fw-bold my-0">Todo en Skincare</h4>
             </div>
 
+            <!-- CONTENEDOR FILTRÁ Y ORDENÁ -->
+            <div class="filter-sort-box p-3 rounded border mt-4 mx-auto">
+                <!-- FILTRÁ -->
+                <div class="d-flex align-items-center flex-wrap mb-3 p-2">
+                    <span class="fw-bold me-3 filtr">FILTRÁ:</span>
+                    <div class="d-flex flex-wrap gap-2">
+                        <button class="btn btn-outline-dark filter-btn active-filter" data-category="All">Todos</button>
+                        <button class="btn btn-outline-dark filter-btn" data-category="Hidratacion">Hidratación</button>
+                        <button class="btn btn-outline-dark filter-btn" data-category="Limpieza">Limpieza</button>
+                        <button class="btn btn-outline-dark filter-btn" data-category="Tratamientos">Tratamientos</button>
+                    </div>
+                </div>
+                
+                <!-- ORDENÁ -->
+                <div class="d-flex align-items-center flex-wrap p-2">
+                    <span class="fw-bold me-3 filtr">ORDENÁ:</span>
+                    <div class="d-flex flex-wrap gap-2">
+                        <button class="btn btn-outline-dark sort-btn" data-sort="asc">Precio: menor a mayor</button>
+                        <button class="btn btn-outline-dark sort-btn" data-sort="desc">Precio: mayor a menor</button>
+                        <button class="btn btn-outline-dark sort-btn" data-sort="fecha">Fecha de release</button>
+                        <button class="btn btn-outline-dark sort-btn" data-sort="asc">Bestsellers</button>
+                    </div>
+                </div>
+
+            </div>
+
+
+            
+            <!-- CONTENEDOR DE CARDS -->
             <div id="cardContainer" class="mb-5 mt-3"></div>
         </div>
 
         <div id="cartContainer"></div>
         <div id="specialCouponsContainer"></div>
     </main>
+    <script defer type="module" src="./productos.js"></script>
     <script defer type="module" src="/pages/controller/category.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"

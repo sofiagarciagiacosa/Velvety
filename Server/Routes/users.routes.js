@@ -12,6 +12,7 @@ let userData = JSON.parse(fileUsers);
 
 //definición de rutas
 
+/*
 // GET para obtener todos los usuarios (act de prueba)
 router.get("/", async (req, res) => {
     try {
@@ -20,8 +21,9 @@ router.get("/", async (req, res) => {
       res.status(500).json({ message: "Error al leer usuarios", error });
     }
 });
-
+*/
 // GET para obtener un usuario por id (act de prueba)
+/*
 router.get("/byId/:id", async (req, res) => {
     try{
         const id= parseInt(req.params.id)
@@ -39,7 +41,7 @@ router.get("/byId/:id", async (req, res) => {
         res.status(500).json({ message: "Error al buscar usuario", error });
     }
 });
-
+*/
 
 // POST para crear un nuevo usuario con validación de email duplicado
 router.post("/registro", async (req, res) => {
@@ -96,6 +98,7 @@ router.post("/login", async (req, res) => {
 });
 
 // PUT para actualizar usuario (actividad de prueba)
+/*
 router.put("/:id", async (req, res) => {
     try {
         const id = parseInt(req.params.id);
@@ -124,8 +127,9 @@ router.put("/:id", async (req, res) => {
         res.status(500).json({ message: "Error al actualizar usuario", error });
     }
 });
-
+*/
 //DELETE para eliminar usuario (actividad de prueba)
+/*
 router.delete("/:id", async (req, res) => {
     try {
         const id = parseInt(req.params.id);
@@ -144,6 +148,6 @@ router.delete("/:id", async (req, res) => {
         res.status(500).json({ message: "Error al eliminar usuario", error });
     }
 });
-
+*/
 
 export default router;

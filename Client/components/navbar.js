@@ -11,7 +11,7 @@ const elements = [
   { title: "Hidratación", link: `${url}pages/hidratacion/hidratacion.html` },
   { title: "Limpieza", link: `${url}pages/limpieza/limpieza.html` },
   { title: "Tratamientos", link: `${url}pages/tratamientos/tratamientos.html` },
-  { title: "Shop All", link: `${url}pages/tratamientos/productos.html` },
+  { title: "Shop All", link: `${url}pages/productos/productos.html` },
   userInfo
     ? { customElement: userCard(userInfo) } // Renderiza userCard si el usuario está logueado
     : {

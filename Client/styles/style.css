@@ -371,3 +371,36 @@ main{
     text-transform: initial;
     font-weight: normal;
 }
+
+/* FILTRADO Y ORDENADO */
+.filter-sort-box {
+    border: 1.3px solid #000000 !important; 
+    border-radius: 12px;
+    display: inline-block;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+    max-width: 100%;
+    width: fit-content;
+}
+.filtr {
+    font-family: Montserrat;
+    font-size: 0.9rem;
+    font-weight: bold;
+    line-height: 27.5px;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    color: #000000; 
+    min-width: 60px;
+}
+
+.active-filter,
+.active-sort {
+    background-color: rgba(238, 216, 197, 1) !important;
+    color: #000 !important;
+    border: 1.3px solid #000000 !important;
+}
+.filter-btn:hover,
+.sort-btn:hover {
+    background-color: rgba(238, 216, 197, 1);
+    color: #000;
+    border: 1.3px solid #000000 !important;
+}

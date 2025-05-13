@@ -69,31 +69,45 @@ window.addEventListener('load', () => {
     
 });
 
-export async function fetchProducts() {
+async function fetchProducts({ sort = null } = {}) {
     const category = document.body.getAttribute("data-category");
     try {
-        const response = await fetch('/data/products.json');
-        const data = await response.json();
+      const response = await fetch("/data/products.json");
+      const data = await response.json();
 
-        let allProducts = [];
+      let allProducts = [];
 
-        if (category === "All") {
-          // Juntar todos los productos de todas las categorías
-          data.forEach((cat) => {
-            allProducts = allProducts.concat(cat.productos);
-          });
-        } else {
-          const categoryData = data.find((cat) => cat.categoria === category);
-          if (categoryData) {
-            allProducts = categoryData.productos;
-          }
+      if (category === "All") {
+        // Juntar todos los productos de todas las categorías
+        data.forEach((cat) => {
+          allProducts = allProducts.concat(cat.productos);
+        });
+      } else {
+        const categoryData = data.find((cat) => cat.categoria === category);
+        if (categoryData) {
+          allProducts = categoryData.productos;
         }
-        
+      }
+      // Aplicar ordenamiento si corresponde
+      if (sort === "release") {
+        // Ordenar por ID descendente (más nuevos primero)
+        allProducts.sort((a, b) => b.id - a.id);
+      } else if (sort === "bestseller") {
+        // Ordenar por soldQuantity descendente (más vendidos primero)
+        allProducts.sort((a, b) => b.soldQuantity - a.soldQuantity);
+      }else if (sort === "asc") {
+        // Ordenar por precio ascendente
+        allProducts.sort((a, b) => a.price - b.price);
+      } else if (sort === "desc") {
+        // Ordenar por precio descendente
+        allProducts.sort((a, b) => b.price - a.price);
+      }
+      
 
-        let cardsHtml = `<div class="row row-cols-1 row-cols-md-3 g-4">`;
-        cardsHtml += allProducts
-          .map((product) => {
-            return `
+      let cardsHtml = `<div class="row row-cols-1 row-cols-md-3 g-4">`;
+      cardsHtml += allProducts
+        .map((product) => {
+          return `
                 <div class="col">
                     ${cardComponent(
                       product.imgSrc,
@@ -104,33 +118,33 @@ export async function fetchProducts() {
                     )}
                 </div>
             `;
-          })
-          .join("");
-        cardsHtml += `</div>`;
+        })
+        .join("");
+      cardsHtml += `</div>`;
 
+      cardContainer.innerHTML = cardsHtml;
 
-        cardContainer.innerHTML = cardsHtml;
+      const addToCartButtons = document.querySelectorAll(".add-to-cart-btn");
+      const offcanvasCart = new bootstrap.Offcanvas(
+        document.getElementById("offcanvasRight")
+      );
 
-        const addToCartButtons = document.querySelectorAll('.add-to-cart-btn');
-        const offcanvasCart = new bootstrap.Offcanvas(document.getElementById('offcanvasRight'));
+      addToCartButtons.forEach((button) => {
+        button.addEventListener("click", (event) => {
+          event.preventDefault();
 
-        addToCartButtons.forEach(button => {
-            button.addEventListener('click', (event) => {
-                event.preventDefault();
+          const product = {
+            imgSrc: button.getAttribute("data-imgsrc"),
+            title: button.getAttribute("data-title"),
+            price: parseFloat(button.getAttribute("data-price")),
+          };
 
-                const product = {
-                    imgSrc: button.getAttribute('data-imgsrc'),
-                    title: button.getAttribute('data-title'),
-                    price: parseFloat(button.getAttribute('data-price')),
-                };
-
-                addItemToCart(product);
-                offcanvasCart.show();
-            });
+          addItemToCart(product);
+          offcanvasCart.show();
         });
-        
-        updateCartDisplay();
+      });
 
+      updateCartDisplay();
     } catch (error) {
         console.error("Error al cargar los productos:", error);
     }

@@ -1,5 +1,5 @@
 
-export const cartComponent= `
+export const cartComponent = `
         
         <div class="offcanvas offcanvas-end offcanvas-wide p-3" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel" style="width: 450px">
             <div class="offcanvas-header">
@@ -23,7 +23,7 @@ export const cartComponent= `
                     </p>
                 </div>
                 <h5>Total: $<span id="cartTotal">0.00</span></h5>
-                <button type="button" class="btn btn-cart" id="checkoutButton">iniciar compra</button>
+                <a href="http://localhost:5000/pages/orden/orden.html" type="button" class="btn btn-cart" id="checkoutButton" >iniciar compra</a>
             </div>
         </div>    
-`
+`;

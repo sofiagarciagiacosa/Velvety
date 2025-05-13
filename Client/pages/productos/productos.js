@@ -1,6 +1,8 @@
 
 export function initProductControls(fetchFunction) {
   const filterButtons = document.querySelectorAll(".filter-btn");
+  const sortButtons = document.querySelectorAll(".sort-btn");
+  let currentSort = null;
   // Ejecuta fetch por primera vez con la categoría actual
   fetchFunction();
   filterButtons.forEach((button) => {
@@ -12,17 +14,19 @@ export function initProductControls(fetchFunction) {
       const selectedCategory = button.getAttribute("data-category");
       document.body.setAttribute("data-category", selectedCategory);
 
-      fetchFunction(); // Vuelve a cargar los productos con la nueva categoría
+      fetchFunction({ sort: currentSort }); // Pasa el orden actual
     });
   });
 
-  const sortButtons = document.querySelectorAll(".sort-btn");
+  
   sortButtons.forEach((button) => {
     button.addEventListener("click", () => {
       sortButtons.forEach((btn) => btn.classList.remove("active-sort"));
       button.classList.add("active-sort");
 
-      // Acá podrías agregar lógica de ordenamiento si querés
+      currentSort = button.getAttribute("data-sort");
+
+      fetchFunction({ sort: currentSort }); // Aplica el nuevo orden
     });
   });
 }

@@ -9,79 +9,47 @@ const readCoupons = async () => {
     return JSON.parse(file);
 };
 
-const writeCoupons = async (data) => {
-    await writeFile("Client/data/coupons.json", JSON.stringify(data, null, 2));
-};
-
 // GET para obtener todos los cupones
 router.get('/', async (req, res) => {
     const coupons = await readCoupons();
     res.json(coupons);
 });
 
-// GET para obtener cupón por código
-router.get('/:code', async (req, res) => {
-    const { code } = req.params;
+// Devuelve solo los cupones especiales
+router.get('/special', async (req, res) => {
     const coupons = await readCoupons();
-    const coupon = coupons.find(c => c.code === code.toUpperCase());
-
-    if (coupon) {
-        res.json(coupon);
-    } else {
-        res.status(404).json({ error: "Cupón no encontrado" });
-    }
+    const specialCoupons = coupons.filter(c => c.special === true);
+    res.json(specialCoupons);
 });
 
-// POST - Crear nuevo cupón
-router.post('/nuevo', async (req, res) => {
-    const newCoupon = req.body;
-    const coupons = await readCoupons();
-
-    if (coupons.find(c => c.code === newCoupon.code)) {
-        return res.status(400).json({ error: "Ese código de cupón ya existe" });
-    }
-
-    coupons.push(newCoupon);
-    await writeCoupons(coupons);
-
-    res.status(201).json({ message: "Cupón creado con éxito", coupon: newCoupon });
-});
-
-// POST para aplicar cupón, verifica condiciones
+// Ruta para guardar el cupón aplicado por un usuario
 router.post('/apply', async (req, res) => {
-    const { code, amount } = req.body;
-    const coupons = await readCoupons();
-    const coupon = coupons.find(c => c.code === code.toUpperCase());
+    const { email, code } = req.body;
 
-    if (!coupon) {
-        return res.status(404).json({ error: "Cupón inválido" });
+    if (!email || !code) {
+        return res.status(400).json({ message: "Faltan datos requeridos" });
     }
 
-    if (coupon.minAmount && amount < coupon.minAmount) {
-        return res.status(400).json({ 
-            error: `Este cupón requiere un monto mínimo de $${coupon.minAmount}` 
-        });
+    try {
+        const filePath = `Client/data/appliedCoupons.json`;
+
+        let data = [];
+        try {
+            const file = await readFile(filePath, "utf-8");
+            data = JSON.parse(file);
+        } catch (_) {
+            // Archivo no existe o está vacío, continúa
+        }
+
+        const updatedData = data.filter(entry => entry.email !== email);
+        updatedData.push({ email, code });
+
+        await writeFile(filePath, JSON.stringify(updatedData, null, 2));
+        res.json({ message: "Cupón guardado" });
+    } catch (error) {
+        console.error("Error al guardar cupón:", error);
+        res.status(500).json({ message: "Error interno del servidor" });
     }
-
-    res.json({ message: "Cupón válido", discount: coupon.discount });
-});
-
-// PUT para actualizar cupón existente por código
-router.put('/:code', async (req, res) => {
-    const { code } = req.params;
-    const updatedData = req.body;
-    const coupons = await readCoupons();
-
-    const index = coupons.findIndex(c => c.code === code.toUpperCase());
-
-    if (index === -1) {
-        return res.status(404).json({ error: "Cupón no encontrado" });
-    }
-
-    coupons[index] = { ...coupons[index], ...updatedData };
-    await writeCoupons(coupons);
-
-    res.json({ message: "Cupón actualizado", coupon: coupons[index] });
 });
 
 

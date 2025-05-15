@@ -10,8 +10,6 @@ let navContainer = document.querySelector('header');
 let cardContainer = document.getElementById('cardContainer');
 let cartContainer = document.getElementById('cartContainer');
 
-// Obtiene la categoría desde el atributo data-category del body
-const category = document.body.getAttribute("data-category");
 
 window.addEventListener('load', () => {
     navContainer.innerHTML = navbarComponent;
@@ -72,7 +70,7 @@ window.addEventListener('load', () => {
 async function fetchProducts({ sort = null } = {}) {
     const category = document.body.getAttribute("data-category");
     try {
-      const response = await fetch("/data/products.json");
+      const response = await fetch("/products");
       const data = await response.json();
 
       let allProducts = [];

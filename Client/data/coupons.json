@@ -23,6 +23,7 @@
         "code": "ENVIOGRATIS",
         "discount": "Envío Gratis",
         "condition": "en compras mayores a $40000",
+        "minAmount": 40000,
         "special": false
     }
 ]

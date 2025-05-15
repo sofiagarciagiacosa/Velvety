@@ -23,7 +23,7 @@ export const cartComponent = `
                     </p>
                 </div>
                 <h5>Total: $<span id="cartTotal">0.00</span></h5>
-                <a href="http://localhost:5000/pages/orden/orden.html" type="button" class="btn btn-cart" id="checkoutButton" >iniciar compra</a>
+                <a  type="button" class="btn btn-cart" id="checkoutButton" >iniciar compra</a>
             </div>
         </div>    
 `;

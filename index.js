@@ -3,6 +3,7 @@ import dotenv from "dotenv"
 import usersRouter from "./Server/Routes/users.routes.js"
 import productsRouter from "./Server/Routes/products.routes.js"
 import couponsRouter from "./Server/Routes/coupons.routes.js"
+import ordersRouter from "./Server/Routes/orders.routes.js"
 
 //traer variables de entorno
 dotenv.config()
@@ -26,6 +27,6 @@ app.use(express.static('./Client'))
 
 //rutas de usuarios end-point
 app.use("/account", usersRouter)
-app.use("/product", productsRouter)
+app.use("/products", productsRouter)
 app.use("/coupon", couponsRouter )
-
+app.use("/orders", ordersRouter)

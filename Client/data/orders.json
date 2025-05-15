@@ -1,0 +1,218 @@
+[
+  {
+    "id": "2fc13c73-83e1-4110-b859-03b4dfb1e4a5",
+    "user": {
+      "id": 1,
+      "firstName": "Juan",
+      "email": "juan.perez@example.com"
+    },
+    "cartItems": [
+      {
+        "imgSrc": "/assets/tonico.webp",
+        "title": "Rosewater Tonic",
+        "price": 4200,
+        "quantity": 1
+      },
+      {
+        "imgSrc": "/assets/protectorSolar.webp",
+        "title": "Sun Shield SPF 50+",
+        "price": 8900,
+        "quantity": 1
+      },
+      {
+        "imgSrc": "/assets/comboLimpieza.webp",
+        "title": "Combo Esencial de Limpieza",
+        "price": 15900,
+        "quantity": 1
+      }
+    ],
+    "coupon": {
+      "code": "VELVETY20",
+      "discount": "20",
+      "condition": "en tu primera compra",
+      "minAmount": 0,
+      "special": true
+    },
+    "total": 23200,
+    "createdAt": "2025-05-15T22:16:00.674Z"
+  },
+  {
+    "id": "6dc9455e-83df-4ae1-8912-26c7501c0400",
+    "user": {
+      "id": 2,
+      "firstName": "Mariana",
+      "email": "mariana.gonzalez@example.com"
+    },
+    "cartItems": [
+      {
+        "imgSrc": "/assets/rollerJade.jpeg",
+        "title": "Jade Roller",
+        "price": 4500,
+        "quantity": 1
+      },
+      {
+        "imgSrc": "/assets/bathBomb.webp",
+        "title": "Lavender Bliss Bath Bomb",
+        "price": 3200,
+        "quantity": 1
+      }
+    ],
+    "coupon": {
+      "code": "VELVETY20",
+      "discount": "20",
+      "condition": "en tu primera compra",
+      "minAmount": 0,
+      "special": true
+    },
+    "total": 6160,
+    "createdAt": "2025-05-15T22:26:06.518Z"
+  },
+  {
+    "id": "3ebc6d43-f64e-49e4-af3f-61ca5f175371",
+    "user": {
+      "id": 2,
+      "firstName": "Mariana",
+      "email": "mariana.gonzalez@example.com"
+    },
+    "cartItems": [
+      {
+        "imgSrc": "/assets/rollerJade.jpeg",
+        "title": "Jade Roller",
+        "price": 4500,
+        "quantity": 1
+      },
+      {
+        "imgSrc": "/assets/bathBomb.webp",
+        "title": "Lavender Bliss Bath Bomb",
+        "price": 3200,
+        "quantity": 1
+      }
+    ],
+    "coupon": {
+      "code": "VELVETY20",
+      "discount": "20",
+      "condition": "en tu primera compra",
+      "minAmount": 0,
+      "special": true
+    },
+    "total": 6160,
+    "createdAt": "2025-05-15T22:30:00.064Z"
+  },
+  {
+    "id": "c2a19e1b-1903-4de1-9f5a-52cfccf63060",
+    "user": {
+      "id": 2,
+      "firstName": "Mariana",
+      "email": "mariana.gonzalez@example.com"
+    },
+    "cartItems": [
+      {
+        "imgSrc": "/assets/rollerJade.jpeg",
+        "title": "Jade Roller",
+        "price": 4500,
+        "quantity": 1
+      },
+      {
+        "imgSrc": "/assets/bathBomb.webp",
+        "title": "Lavender Bliss Bath Bomb",
+        "price": 3200,
+        "quantity": 1
+      }
+    ],
+    "coupon": null,
+    "total": 7700,
+    "createdAt": "2025-05-15T22:39:11.961Z"
+  },
+  {
+    "id": "a10a0df8-b192-41a0-a47b-ae73ff811349",
+    "user": {
+      "id": 2,
+      "firstName": "Mariana",
+      "email": "mariana.gonzalez@example.com"
+    },
+    "cartItems": [
+      {
+        "imgSrc": "/assets/ExfoliatingSoap.jpeg",
+        "title": "Exfoliating Soap",
+        "price": 4300,
+        "quantity": 1
+      },
+      {
+        "imgSrc": "/assets/BathSalt.jpeg",
+        "title": "Lavender Bath Salt",
+        "price": 3700,
+        "quantity": 1
+      },
+      {
+        "imgSrc": "/assets/parchesOjos.webp",
+        "title": "Hydra Eye Patches",
+        "price": 3900,
+        "quantity": 1
+      },
+      {
+        "imgSrc": "/assets/serumHidratante.webp",
+        "title": "Radiance Serum",
+        "price": 13800,
+        "quantity": 1
+      },
+      {
+        "imgSrc": "/assets/protectorSolar.webp",
+        "title": "Sun Shield SPF 50+",
+        "price": 8900,
+        "quantity": 1
+      }
+    ],
+    "coupon": null,
+    "total": 34600,
+    "createdAt": "2025-05-15T22:42:20.257Z"
+  },
+  {
+    "id": "e624d24f-45ff-4dee-b5dc-73d0e0c402ec",
+    "user": {
+      "id": 2,
+      "firstName": "Mariana",
+      "email": "mariana.gonzalez@example.com"
+    },
+    "cartItems": [
+      {
+        "imgSrc": "/assets/ExfoliatingSoap.jpeg",
+        "title": "Exfoliating Soap",
+        "price": 4300,
+        "quantity": 1
+      },
+      {
+        "imgSrc": "/assets/BathSalt.jpeg",
+        "title": "Lavender Bath Salt",
+        "price": 3700,
+        "quantity": 1
+      },
+      {
+        "imgSrc": "/assets/parchesOjos.webp",
+        "title": "Hydra Eye Patches",
+        "price": 3900,
+        "quantity": 1
+      },
+      {
+        "imgSrc": "/assets/serumHidratante.webp",
+        "title": "Radiance Serum",
+        "price": 13800,
+        "quantity": 1
+      },
+      {
+        "imgSrc": "/assets/protectorSolar.webp",
+        "title": "Sun Shield SPF 50+",
+        "price": 8900,
+        "quantity": 1
+      }
+    ],
+    "coupon": {
+      "code": "VELVETY20",
+      "discount": "20",
+      "condition": "en tu primera compra",
+      "minAmount": 0,
+      "special": true
+    },
+    "total": 27680,
+    "createdAt": "2025-05-15T22:42:34.025Z"
+  }
+]

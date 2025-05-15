@@ -2,9 +2,6 @@ import { createCouponComponent } from "./couponItem.js";
 
 export async function loadCoupons() {
     try {
-        const response = await fetch("/data/coupons.json");  
-        const coupons = await response.json();
-
         let specialContainer = document.getElementById("specialCouponsContainer");
 
         if (!specialContainer) {
@@ -13,7 +10,8 @@ export async function loadCoupons() {
         }
 
         // Filtramos solo los cupones especiales (con "special: true")
-        const specialCoupons = coupons.filter(coupon => coupon.special === true);
+        const couponResponse = await fetch("/coupon/special");
+        const specialCoupons = await couponResponse.json();
 
         // Si no hay cupones especiales, no hacemos nada
         if (specialCoupons.length === 0) {

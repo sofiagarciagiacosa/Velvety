@@ -7,9 +7,76 @@ import {
   updateCartTotal,
   loadCouponsForCart,
 } from "/pages/items/items.js";
+import { getData } from "../../utils/localStorage.js";
 
 let navContainer = document.querySelector("header");
 let cartContainer = document.getElementById("cartContainer");
+
+
+const renderOrderDetails = () => {
+  const orderContainer = document.querySelector(".card-orden .row"); 
+  const cartItems = getData("cartItems"); 
+  const coupon = getData("appliedCoupon"); 
+
+  let total = 0;
+
+  const pedidoCol = orderContainer.querySelector(".col-md-6:last-child");
+  pedidoCol.innerHTML = `<h6 class="fw-bold text-uppercase text-orden mb-3">Mi Pedido</h6>`;
+
+  cartItems.forEach((item) => {
+    const subtotal = item.price * item.quantity;
+    total += subtotal;
+
+    pedidoCol.innerHTML += `
+            <div class="d-flex mb-3 align-items-center">
+                <img src="${item.imgSrc}" class="cart-item-img" style="width: 50px; height: 50px; margin-right: 10px;" alt="${item.title}">
+                <div>
+                    <p class="mb-0"><strong>${item.title}</strong></p>
+                    <p class="mb-0">$${item.price}</p>
+                    <p class="mb-0">x${item.quantity}</p>
+                </div>
+            </div>
+        `;
+  });
+
+  if (coupon?.code) {
+    const descuentoAplicado = total * (coupon.discount / 100);
+    total -= descuentoAplicado;
+
+    pedidoCol.innerHTML += `
+            <p class="mt-3"><strong>Cupón en uso:</strong> ${coupon.code}</p>
+            <p><strong>Total con descuento:</strong> $${total.toFixed(2)}</p>
+        `;
+  } else {
+    pedidoCol.innerHTML += `<p class="mt-3"><strong>Total:</strong> $${total.toFixed(
+      2
+    )}</p>`;
+  }
+};
+
+const renderUserData = () => {
+  const userData = JSON.parse(sessionStorage.getItem("userData"));
+  if (!userData) return;
+
+  const profileCol = document.querySelector(".card-orden .col-md-6");
+
+  profileCol.innerHTML = `
+      <h6 class="fw-bold text-uppercase text-orden mb-3">Mi Perfil</h6>
+      <p class="mb-1"><strong>Nombre</strong></p>
+      <p>${userData.firstName}</p>
+      
+      <p class="mb-1"><strong>Apellido</strong></p>
+      <p>${userData.lastName}</p>
+      
+      <p class="mb-1"><strong>Email</strong></p>
+      <p>${userData.email}</p>
+      
+      <p class="mb-1"><strong>Fecha de Nacimiento</strong></p>
+      <p>${userData.birthDate}</p>
+    `;
+};
+  
+
 
 
 window.addEventListener('load', async () => {
@@ -66,7 +133,9 @@ window.addEventListener('load', async () => {
         if (removeCouponBtn) {
             removeCouponBtn.addEventListener("click", removeCoupon);
         }
-        
+
+        renderOrderDetails();
+        renderUserData();
 
     } catch (error) {
         console.error("Error al cargar los cupones o el contenido de la página:", error);

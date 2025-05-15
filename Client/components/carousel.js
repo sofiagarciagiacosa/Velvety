@@ -3,8 +3,8 @@ import { addItemToCart, updateCartDisplay } from "../pages/items/items.js";
 
 export async function fetchTopSellingProducts() {
     try {
-        // Cargar los datos desde el archivo JSON
-        const response = await fetch('/data/products.json');
+        // Cargar los datos desde el back
+        const response = await fetch('/products');
         
         if (!response.ok) {
             throw new Error("Error en la respuesta de la solicitud");

@@ -419,3 +419,9 @@ main{
         line-height: 27.5px;
         text-transform: uppercase;
 }
+.borde-negro{
+    border-right: 1.3px solid #000000 !important;
+}
+.col-md-6{
+    font-family: 'Montserrat' !important;
+}

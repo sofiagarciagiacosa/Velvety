@@ -256,10 +256,12 @@ export function updateCartDisplay() {
           if (hasValidCoupon) {
             bodyData.coupon = coupon;
           }
+          const token = sessionStorage.getItem("token");
           const response = await fetch("/orders", {
             method: "POST",
             headers: {
               "Content-Type": "application/json",
+              "Authorization": `Bearer ${sessionStorage.getItem("token")}`,
             },
             body: JSON.stringify(bodyData),
           });

@@ -27,6 +27,7 @@ form.addEventListener("submit", async (e) => {
 
     if (response.ok) {
       sessionStorage.setItem("userData", JSON.stringify(result.user));
+      sessionStorage.setItem("token", result.token); // Guardás el token
       window.location.href = "http://localhost:5000/index.html";
     } else {
       alert(result.message || "Error al iniciar sesión");

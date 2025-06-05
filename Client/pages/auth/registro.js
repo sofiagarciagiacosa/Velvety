@@ -33,11 +33,15 @@ document.querySelector("form").addEventListener("submit", async (e) => {
       sessionStorage.setItem(
         "userData",
         JSON.stringify({
-          id: data.id,
-          firstName: data.firstName,
-          email: data.email,
+          id: data.user.id,
+          firstName: data.user.firstName,
+          email: data.user.email,
+          lastName: data.user.lastName,
+          birthDate: data.user.birthDate,
+          
         })
       );
+      sessionStorage.setItem("token", data.token); // Guardás el token
 
       window.location.href = "http://localhost:5000/";
     } else {

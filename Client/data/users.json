@@ -60,7 +60,71 @@
     "firstName": "Alice",
     "lastName": "Bedon",
     "email": "ali@gmail.com",
-    "password": "ali1.",
+    "hashedPassword": "ali1.",
     "birthDate": "1997-05-11"
+  },
+  {
+    "id": 9,
+    "firstName": "Daniel",
+    "lastName": "Ceasar",
+    "email": "Dani@gmail.com",
+    "hashedPassword": "$2b$10$BKBSpogUzfqbCR/0Rf7NX.2hCxggK7DI2.VHkYmHlteI5uS5j/xZW",
+    "birthDate": "1995-04-05"
+  },
+  {
+    "id": 10,
+    "firstName": "Frank",
+    "lastName": "Ocean",
+    "email": "Fran@gmail.com",
+    "hashedPassword": "$2b$10$y2B9ZqCXy55XqYrwLPyqkuGv/IWNIg8E/KAdyn5UmJW7lEvgJUuQe",
+    "birthDate": "1987-10-28"
+  },
+  {
+    "id": 11,
+    "firstName": "Kali",
+    "lastName": "Uchis",
+    "email": "kali@gmail.com",
+    "hashedPassword": "$2b$10$EffryEp5uYG168AuxuQ10upbJx0EpK2i.vIAe15hiQs79IgbsgNfq",
+    "birthDate": "1994-07-17"
+  },
+  {
+    "id": 12,
+    "firstName": "Olivia",
+    "lastName": "Rodrigo",
+    "email": "olivia@gmail.com",
+    "password": "$2b$10$b5lyE7qxQXM.RWl907VZB.mJ7h6mcsz.kTTrlR0YXwk0g3DXYFTNy",
+    "birthDate": "2003-02-20"
+  },
+  {
+    "id": 13,
+    "firstName": "Justin",
+    "lastName": "Bieber",
+    "email": "justin@gmail.com",
+    "password": "$2b$10$YQOjiGzaUXbs6Yk06YvG0eXMpe5kqFPlynpUO83U0emD2oB5qBkx6",
+    "birthDate": "1994-03-01"
+  },
+  {
+    "id": 14,
+    "firstName": "Taylor",
+    "lastName": "Swift",
+    "email": "taylor@gmail.com",
+    "password": "$2b$10$CHzqM9WCUFpvIYPHABn/O.mBnlD1PW3q8FYKpL51R3SyzbzKgf26S",
+    "birthDate": "1989-12-13"
+  },
+  {
+    "id": 15,
+    "firstName": "Dua",
+    "lastName": "Lipa",
+    "email": "dua@gmail.com",
+    "password": "$2b$10$TO2NSiso2yfJ49v.sfy03uQbg7Pejl/XhyRkKi9tTQc1zABy9hDsi",
+    "birthDate": "1995-08-22"
+  },
+  {
+    "id": 16,
+    "firstName": "John",
+    "lastName": "Mayer",
+    "email": "john@gmail.com",
+    "password": "$2b$10$EBb9zHU2SUO/rksJiQTLWe.XgINwifuboio9Ms/Gx.nYl0tRgzUpS",
+    "birthDate": "1977-10-16"
   }
 ]

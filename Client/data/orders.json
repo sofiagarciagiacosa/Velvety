@@ -214,5 +214,272 @@
     },
     "total": 27680,
     "createdAt": "2025-05-15T22:42:34.025Z"
+  },
+  {
+    "id": "83cbe4db-a4a8-4270-854a-9f245d6a04a5",
+    "user": {
+      "id": 12,
+      "firstName": "Olivia",
+      "email": "olivia@gmail.com",
+      "iat": 1749153275,
+      "exp": 1749160475
+    },
+    "cartItems": [
+      {
+        "imgSrc": "/assets/rollerJade.jpeg",
+        "title": "Jade Roller",
+        "price": 4500,
+        "quantity": 1
+      },
+      {
+        "imgSrc": "/assets/serumHidratante.webp",
+        "title": "Radiance Serum",
+        "price": 13800,
+        "quantity": 1
+      },
+      {
+        "imgSrc": "/assets/BodyScrub.webp",
+        "title": "Body Scrub",
+        "price": 5200,
+        "quantity": 1
+      }
+    ],
+    "coupon": {
+      "code": "VELVETY20",
+      "discount": "20",
+      "condition": "en tu primera compra",
+      "minAmount": 0,
+      "special": true
+    },
+    "total": 18800,
+    "createdAt": "2025-06-05T19:55:17.664Z"
+  },
+  {
+    "id": "b0b894d0-acae-4c71-8707-c67b6d9d10ee",
+    "user": {
+      "id": 12,
+      "firstName": "Olivia",
+      "email": "olivia@gmail.com",
+      "iat": 1749155120,
+      "exp": 1749162320
+    },
+    "cartItems": [
+      {
+        "imgSrc": "/assets/tonico.webp",
+        "title": "Rosewater Tonic",
+        "price": 4200,
+        "quantity": 1
+      },
+      {
+        "imgSrc": "/assets/gelLimpieza.webp",
+        "title": "Deep Clean Gel",
+        "price": 6800,
+        "quantity": 1
+      }
+    ],
+    "coupon": null,
+    "total": 11000,
+    "createdAt": "2025-06-05T20:26:08.407Z"
+  },
+  {
+    "id": "80ee8689-3769-4d5f-97db-d0fdb24dbd00",
+    "user": {
+      "id": 12,
+      "firstName": "Olivia",
+      "email": "olivia@gmail.com",
+      "iat": 1749155120,
+      "exp": 1749162320
+    },
+    "cartItems": [
+      {
+        "imgSrc": "/assets/tonico.webp",
+        "title": "Rosewater Tonic",
+        "price": 4200,
+        "quantity": 1
+      },
+      {
+        "imgSrc": "/assets/gelLimpieza.webp",
+        "title": "Deep Clean Gel",
+        "price": 6800,
+        "quantity": 1
+      }
+    ],
+    "coupon": null,
+    "total": 11000,
+    "createdAt": "2025-06-05T20:26:08.421Z"
+  },
+  {
+    "id": "ab1077fd-78f2-40f9-b8cf-3de14bb32e7e",
+    "user": {
+      "id": 13,
+      "firstName": "Justin",
+      "email": "justin@gmail.com",
+      "iat": 1749155257,
+      "exp": 1749162457
+    },
+    "cartItems": [
+      {
+        "imgSrc": "/assets/tonico.webp",
+        "title": "Rosewater Tonic",
+        "price": 4200,
+        "quantity": 1
+      },
+      {
+        "imgSrc": "/assets/gelLimpieza.webp",
+        "title": "Deep Clean Gel",
+        "price": 6800,
+        "quantity": 1
+      }
+    ],
+    "coupon": null,
+    "total": 11000,
+    "createdAt": "2025-06-05T20:27:56.976Z"
+  },
+  {
+    "id": "f891fd3f-c45b-44b5-aa88-1d6e82468749",
+    "user": {
+      "id": 15,
+      "firstName": "Dua",
+      "email": "dua@gmail.com",
+      "iat": 1749155677,
+      "exp": 1749162877
+    },
+    "cartItems": [
+      {
+        "imgSrc": "/assets/cremaHidratanteIntensa.webp",
+        "title": "Intense Hydration Cream",
+        "price": 16200,
+        "quantity": 1
+      },
+      {
+        "imgSrc": "/assets/guasha.webp",
+        "title": "Gua Sha de Cuarzo",
+        "price": 5300,
+        "quantity": 1
+      },
+      {
+        "imgSrc": "/assets/serumVitaminaC.jpeg",
+        "title": "Vitamin C Serum",
+        "price": 13400,
+        "quantity": 1
+      }
+    ],
+    "coupon": null,
+    "total": 34900,
+    "createdAt": "2025-06-05T20:35:23.344Z"
+  },
+  {
+    "id": "12744a9c-4bab-41c9-ba64-30f0dbb2b664",
+    "user": {
+      "id": 15,
+      "firstName": "Dua",
+      "email": "dua@gmail.com",
+      "iat": 1749155677,
+      "exp": 1749162877
+    },
+    "cartItems": [
+      {
+        "imgSrc": "/assets/cremaHidratanteIntensa.webp",
+        "title": "Intense Hydration Cream",
+        "price": 16200,
+        "quantity": 1
+      },
+      {
+        "imgSrc": "/assets/guasha.webp",
+        "title": "Gua Sha de Cuarzo",
+        "price": 5300,
+        "quantity": 1
+      },
+      {
+        "imgSrc": "/assets/serumVitaminaC.jpeg",
+        "title": "Vitamin C Serum",
+        "price": 13400,
+        "quantity": 1
+      }
+    ],
+    "coupon": null,
+    "total": 34900,
+    "createdAt": "2025-06-05T20:35:23.373Z"
+  },
+  {
+    "id": "4c4cf894-c7e9-4cb3-82d2-fc5ddbce1af5",
+    "user": {
+      "id": 16,
+      "firstName": "John",
+      "email": "john@gmail.com",
+      "iat": 1749156187,
+      "exp": 1749163387
+    },
+    "cartItems": [
+      {
+        "imgSrc": "/assets/ExfoliatingSoap.jpeg",
+        "title": "Exfoliating Soap",
+        "price": 4300,
+        "quantity": 1
+      },
+      {
+        "imgSrc": "/assets/cremaManos.webp",
+        "title": "Body Silk",
+        "price": 14500,
+        "quantity": 1
+      }
+    ],
+    "coupon": null,
+    "total": 18800,
+    "createdAt": "2025-06-05T20:43:32.530Z"
+  },
+  {
+    "id": "f61f62d3-5163-467a-a508-71ddb8f1f4c3",
+    "user": {
+      "id": 16,
+      "firstName": "John",
+      "email": "john@gmail.com",
+      "iat": 1749156187,
+      "exp": 1749163387
+    },
+    "cartItems": [
+      {
+        "imgSrc": "/assets/ExfoliatingSoap.jpeg",
+        "title": "Exfoliating Soap",
+        "price": 4300,
+        "quantity": 1
+      },
+      {
+        "imgSrc": "/assets/cremaManos.webp",
+        "title": "Body Silk",
+        "price": 14500,
+        "quantity": 1
+      }
+    ],
+    "coupon": null,
+    "total": 18800,
+    "createdAt": "2025-06-05T20:43:32.550Z"
+  },
+  {
+    "id": "47d6a194-4e17-4517-8b6a-aa5291a6ae00",
+    "user": {
+      "id": 16,
+      "firstName": "John",
+      "email": "john@gmail.com",
+      "iat": 1749156187,
+      "exp": 1749163387
+    },
+    "cartItems": [
+      {
+        "imgSrc": "/assets/ExfoliatingSoap.jpeg",
+        "title": "Exfoliating Soap",
+        "price": 4300,
+        "quantity": 1
+      },
+      {
+        "imgSrc": "/assets/cremaManos.webp",
+        "title": "Body Silk",
+        "price": 14500,
+        "quantity": 1
+      }
+    ],
+    "coupon": null,
+    "total": 18800,
+    "createdAt": "2025-06-05T20:43:32.571Z"
   }
 ]

@@ -3,3 +3,5 @@ node_modules/
 
 # Archivo de bloqueo de versiones
 package-lock.json
+
+.env

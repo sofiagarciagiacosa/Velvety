@@ -60,7 +60,7 @@
     "firstName": "Alice",
     "lastName": "Bedon",
     "email": "ali@gmail.com",
-    "hashedPassword": "ali1.",
+    "password": "ali1.",
     "birthDate": "1997-05-11"
   },
   {
@@ -68,7 +68,7 @@
     "firstName": "Daniel",
     "lastName": "Ceasar",
     "email": "Dani@gmail.com",
-    "hashedPassword": "$2b$10$BKBSpogUzfqbCR/0Rf7NX.2hCxggK7DI2.VHkYmHlteI5uS5j/xZW",
+    "password": "$2b$10$BKBSpogUzfqbCR/0Rf7NX.2hCxggK7DI2.VHkYmHlteI5uS5j/xZW",
     "birthDate": "1995-04-05"
   },
   {
@@ -76,7 +76,7 @@
     "firstName": "Frank",
     "lastName": "Ocean",
     "email": "Fran@gmail.com",
-    "hashedPassword": "$2b$10$y2B9ZqCXy55XqYrwLPyqkuGv/IWNIg8E/KAdyn5UmJW7lEvgJUuQe",
+    "password": "$2b$10$y2B9ZqCXy55XqYrwLPyqkuGv/IWNIg8E/KAdyn5UmJW7lEvgJUuQe",
     "birthDate": "1987-10-28"
   },
   {
@@ -84,7 +84,7 @@
     "firstName": "Kali",
     "lastName": "Uchis",
     "email": "kali@gmail.com",
-    "hashedPassword": "$2b$10$EffryEp5uYG168AuxuQ10upbJx0EpK2i.vIAe15hiQs79IgbsgNfq",
+    "password": "$2b$10$EffryEp5uYG168AuxuQ10upbJx0EpK2i.vIAe15hiQs79IgbsgNfq",
     "birthDate": "1994-07-17"
   },
   {

@@ -15,8 +15,9 @@ let cartContainer = document.getElementById("cartContainer");
 
 const renderOrderDetails = () => {
   const orderContainer = document.querySelector(".card-orden .row"); 
-  const cartItems = getData("cartItems"); 
-  const coupon = getData("appliedCoupon"); 
+  const cartItems = JSON.parse(localStorage.getItem("lastOrderCart")) || [];
+  const coupon = JSON.parse(localStorage.getItem("lastOrderCoupon")); 
+
 
   let total = 0;
 
@@ -59,6 +60,8 @@ const renderUserData = () => {
   if (!userData) return;
 
   const profileCol = document.querySelector(".card-orden .col-md-6");
+  const formattedDate = new Date(userData.birthDate).toLocaleDateString("es-AR");
+  
 
   profileCol.innerHTML = `
       <h6 class="fw-bold text-uppercase text-orden mb-3">Mi Perfil</h6>
@@ -72,7 +75,7 @@ const renderUserData = () => {
       <p>${userData.email}</p>
       
       <p class="mb-1"><strong>Fecha de Nacimiento</strong></p>
-      <p>${userData.birthDate}</p>
+      <p>${formattedDate}</p>
     `;
 };
   

@@ -4,7 +4,7 @@ import { addItemToCart, updateCartDisplay } from "../pages/items/items.js";
 export async function fetchTopSellingProducts() {
     try {
         // Cargar los datos desde el back
-        const response = await fetch('/products');
+        const response = await fetch("/products/All");
         
         if (!response.ok) {
             throw new Error("Error en la respuesta de la solicitud");
@@ -12,8 +12,7 @@ export async function fetchTopSellingProducts() {
 
         const data = await response.json();
 
-        // Combinar todos los productos de todas las categorías en un solo array
-        const allProducts = data.flatMap(category => category.productos);
+        const allProducts = data;
 
         // Ordenar los productos por cantidad de ventas en orden descendente
         const topSellingProducts = allProducts
@@ -31,7 +30,7 @@ export async function fetchTopSellingProducts() {
                     <div class="row row-cols-1 row-cols-md-3 g-4">
                         ${group.map(card => {
                             return `<div class="col">
-                                ${cardComponent(card.imgSrc, card.title, card.text, `Comprar`, card.price)}
+                                ${cardComponent(card._id, card.imgSrc, card.title, card.text, `Comprar`, card.price)}
                             </div>`;
                         }).join('')}
                     </div>
@@ -52,9 +51,10 @@ export async function fetchTopSellingProducts() {
                 button.addEventListener('click', (event) => {
                     event.preventDefault();
                     const product = {
-                        imgSrc: button.getAttribute('data-imgsrc'),
-                        title: button.getAttribute('data-title'),
-                        price: parseFloat(button.getAttribute('data-price')),
+                      _id: button.getAttribute("data-id"),
+                      imgSrc: button.getAttribute("data-imgsrc"),
+                      title: button.getAttribute("data-title"),
+                      price: parseFloat(button.getAttribute("data-price")),
                     };
                     addItemToCart(product);
                     offcanvasCart.show();

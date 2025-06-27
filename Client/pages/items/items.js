@@ -2,7 +2,13 @@ import { getData, setData } from "../../utils/localStorage.js";
 import { cartItemComponent } from "../../components/cartItem.js";
 import { cartComponent } from "../../components/cart.js";
 
-document.getElementById('cartContainer').innerHTML = cartComponent;
+document.addEventListener("DOMContentLoaded", () => {
+  const container = document.getElementById("cartContainer");
+  if (container) {
+    container.innerHTML = cartComponent;
+  }
+});
+
 
 // Función para cargar cupones desde el JSON
 export async function loadCouponsForCart() {
@@ -53,7 +59,12 @@ export async function applyCouponAndCalculateTotal(couponCode) {
             alert(`¡Descuento de ${coupon.discount}% aplicado!`);
 
             // Guardar el cupón aplicado
-            setData("appliedCoupon", coupon);
+            const appliedCoupon = {
+              ...coupon,
+              _id: coupon._id?.$oid || coupon._id, // asegura que sea string
+            };
+            setData("appliedCoupon", appliedCoupon);
+            
             updateCouponMessage(coupon.code);
             const user = JSON.parse(sessionStorage.getItem("userData"));
             if (user?.email) {
@@ -61,8 +72,9 @@ export async function applyCouponAndCalculateTotal(couponCode) {
                 await fetch("/coupon/apply", {
                   method: "POST",
                   headers: { "Content-Type": "application/json" },
-                  body: JSON.stringify({ userEmail: user.email, coupon }),
+                  body: JSON.stringify({ email: user.email, code: coupon.code }),
                 });
+                
               } catch (err) {
                 console.error("Error guardando cupón en el backend:", err);
               }
@@ -113,17 +125,20 @@ function removeCoupon() {
 
 // Agregar producto al carrito en localStorage
 export function addItemToCart(product) {
-    let items = getData('cartItems') || [];
-    const existingProductIndex = items.findIndex(item => item.title === product.title);
+  console.log("Producto agregado al carrito:", product); // ⬅️ Verificá acá
+  let items = getData("cartItems") || [];
+  const existingProductIndex = items.findIndex(
+    (item) => item.title === product.title
+  );
 
-    if (existingProductIndex >= 0) {
-        items[existingProductIndex].quantity += 1;
-    } else {
-        items.push({ ...product, quantity: 1 });
-    }
+  if (existingProductIndex >= 0) {
+    items[existingProductIndex].quantity += 1;
+  } else {
+    items.push({ ...product, quantity: 1, _id: product._id });
+  }
 
-    setData('cartItems', items);
-    updateCartDisplay();
+  setData("cartItems", items);
+  updateCartDisplay();
 }
 
 
@@ -214,82 +229,118 @@ export function updateCartDisplay() {
         updateCartTotal(); // sin descuento
       }
     }
-    const checkoutButton = document.getElementById("checkoutButton");
-    if (checkoutButton) {
-      checkoutButton.addEventListener("click", async (e) => {
-        e.preventDefault();
-
-        const cartItems = getData("cartItems") || [];
-        const user = JSON.parse(sessionStorage.getItem("userData"));
-        const coupon = getData("appliedCoupon");
-        const hasValidCoupon = coupon && coupon.discount;
-
-        if (!cartItems.length) {
-          alert("Debes agregar al menos un producto para continuar.");
-          return;
-        }
-
-        if (!user) {
-          window.location.href =
-            "http://localhost:5000/pages/auth/login.html?redirect=orden";
-          return;
-        }
-
-        const total = cartItems.reduce(
-          (acc, item) => acc + item.price * item.quantity,
-          0
-        );
-        const discount = hasValidCoupon ? (total * coupon.discount) / 100 : 0;
-        const finalTotal = total - discount;
-
-        try {
-          const bodyData = {
-            user: {
-              id: user.id,
-              firstName: user.firstName,
-              email: user.email,
-            },
-            cartItems,
-            total: finalTotal,
-          };
-
-          if (hasValidCoupon) {
-            bodyData.coupon = coupon;
-          }
-          const token = sessionStorage.getItem("token");
-          const response = await fetch("/orders", {
-            method: "POST",
-            headers: {
-              "Content-Type": "application/json",
-              "Authorization": `Bearer ${sessionStorage.getItem("token")}`,
-            },
-            body: JSON.stringify(bodyData),
-          });
-          
-
-
-          if (!response.ok) throw new Error("Error al generar la orden");
-
-          const result = await response.json();
-
-          // Guardar orderId y redirigir
-          localStorage.setItem("lastOrderId", result.orderId);
-          window.location.href = "http://localhost:5000/pages/orden/orden.html";
-        } catch (error) {
-          alert("Ocurrió un error al generar la orden: " + error.message);
-        }
-      });
+    function setupCheckoutEvent() {
+      const checkoutButton = document.getElementById("checkoutButton");
+      if (checkoutButton) {
+        // Asegurate de evitar múltiples listeners duplicados
+        checkoutButton.removeEventListener("click", handleCheckout);
+        checkoutButton.addEventListener("click", handleCheckout);
+      }
     }
+    setupCheckoutEvent(); // 👈 Esto asegura que el botón tenga el listener después de renderizarse
+
+    
+    
+    
 }
 
 
 
 // Inicializar el carrito al cargar la página
-window.addEventListener('load', () => {
-    
-    updateCartDisplay();
-    
+window.addEventListener("load", () => {
+  updateCartDisplay(); // Este debe renderizar el checkoutButton
+
+  // ⚠️ Esto debe ir después de renderizar el HTML del botón
+  const checkoutButton = document.getElementById("checkoutButton");
+  if (checkoutButton) {
+    checkoutButton.addEventListener("click", handleCheckout);
+  }
 });
+
+async function handleCheckout(e) {
+  e.preventDefault();
+
+  const cartItems = getData("cartItems") || [];
+  const user = JSON.parse(sessionStorage.getItem("userData"));
+  const coupon = getData("appliedCoupon");
+  const hasValidCoupon = coupon && coupon.discount;
+
+  if (!cartItems.length) {
+    alert("Debes agregar al menos un producto para continuar.");
+    return;
+  }
+
+  if (!user) {
+    window.location.href =
+      "http://localhost:5000/pages/auth/login.html?redirect=orden";
+    return;
+  }
+
+  const total = cartItems.reduce(
+    (acc, item) => acc + item.price * item.quantity,
+    0
+  );
+  const discount = hasValidCoupon ? (total * coupon.discount) / 100 : 0;
+  const finalTotal = total - discount;
+
+  try {
+    const bodyData = {
+      user: {
+        id: user.id,
+        firstName: user.firstName,
+        email: user.email,
+      },
+      cartItems: cartItems.map((item) => ({
+        product: item._id || item.id,
+        quantity: item.quantity,
+      })),
+      total: finalTotal,
+    };
+
+    if (hasValidCoupon) {
+      bodyData.coupon = coupon._id || coupon.id;
+    }
+
+    const token = sessionStorage.getItem("token");
+
+    const payload = JSON.parse(atob(token.split(".")[1]));
+    const isExpired = payload.exp * 1000 < Date.now();
+    if (isExpired) {
+      alert("Tu sesión ha expirado, por favor iniciá sesión nuevamente.");
+      sessionStorage.clear();
+      window.location.href = "http://localhost:5000/pages/auth/login.htm";
+      return;
+    }
+
+    const response = await fetch("/orders/create", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${token}`,
+      },
+      body: JSON.stringify(bodyData),
+    });
+
+    if (!response.ok) throw new Error("Error al generar la orden");
+
+    const result = await response.json();
+
+    localStorage.setItem("lastOrderId", result.order?._id || result.orderId);
+
+    // Justo antes de limpiar y redirigir
+    localStorage.setItem("lastOrderCart", JSON.stringify(cartItems));
+    localStorage.setItem("lastOrderCoupon", JSON.stringify(coupon));
+
+    // Limpiar carrito
+    setData("cartItems", []);
+    setData("appliedCoupon", null);
+
+    window.location.href = "http://localhost:5000/pages/orden/orden.html";
+  } catch (error) {
+    alert("Ocurrió un error al generar la orden: " + error.message);
+  }
+}
+
 document.addEventListener('DOMContentLoaded', () => {
     const applyDiscountButton = document.getElementById('applyDiscount');
     if (applyDiscountButton) {

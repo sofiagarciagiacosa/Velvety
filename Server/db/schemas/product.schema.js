@@ -5,8 +5,7 @@ const {Schema, models, model, ObjectId} = mongoose;
 
 const productSchema = new Schema(
   {
-    //id: { type: Number, required: true, unique: true },
-    //imgSrc: { type: String, required: true },
+    imgSrc: { type: String, required: true },
     title: { type: String, required: true },
     text: { type: String, required: true },
     price: { type: Number, required: true },

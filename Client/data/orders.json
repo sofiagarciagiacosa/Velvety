@@ -481,5 +481,49 @@
     "coupon": null,
     "total": 18800,
     "createdAt": "2025-06-05T20:43:32.571Z"
+  },
+  {
+    "id": "84ecf5c9-600f-4876-9049-ff8ee0cf3f2f",
+    "user": {
+      "id": "685eade3774be637a8294f80",
+      "firstName": "Chris",
+      "email": "chrismartin@gmail.com",
+      "iat": 1751035363,
+      "exp": 1751042563
+    },
+    "cartItems": [
+      {
+        "imgSrc": "/assets/ExfoliatingSoap.jpeg",
+        "title": "Exfoliating Soap",
+        "price": 4300,
+        "quantity": 6
+      },
+      {
+        "imgSrc": "/assets/kombuchaEssence.webp",
+        "title": "Kombucha Glow Essence",
+        "price": 7200,
+        "quantity": 2
+      },
+      {
+        "imgSrc": "/assets/serumHidratante.webp",
+        "title": "Radiance Serum",
+        "price": 13800,
+        "quantity": 1
+      }
+    ],
+    "coupon": {
+      "_id": "685e901c22312e7867fac2ad",
+      "code": "VELVETY35",
+      "discount": "35",
+      "condition": "en compras mayores a $50000",
+      "minAmount": 50000,
+      "special": true,
+      "active": true,
+      "createdAt": "2025-06-27T12:35:40.767Z",
+      "updatedAt": "2025-06-27T12:35:40.767Z",
+      "__v": 0
+    },
+    "total": 35100,
+    "createdAt": "2025-06-27T14:44:30.593Z"
   }
 ]

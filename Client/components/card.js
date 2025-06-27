@@ -1,4 +1,4 @@
-export const cardComponent = (imgSrc, title, text, buttonLabel, price) => {
+export const cardComponent = (id, imgSrc, title, text, buttonLabel, price) => {
     return `
         <div class="col">
             <div class="card h-100">
@@ -10,6 +10,7 @@ export const cardComponent = (imgSrc, title, text, buttonLabel, price) => {
                 <div class="card-footer">
                     <!-- Este es el botón que muestra el precio del producto y añade al carrito -->
                     <a href="#" class="btn btn-product add-to-cart-btn" 
+                       data-id="${id}" 
                        data-imgsrc="${imgSrc}" 
                        data-title="${title}" 
                        data-price="${price}">

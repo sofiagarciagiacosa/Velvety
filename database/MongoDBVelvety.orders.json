@@ -1,0 +1,142 @@
+[{
+  "_id": {
+    "$oid": "685f19e5054906912d742aa2"
+  },
+  "user": {
+    "$oid": "685eade3774be637a8294f80"
+  },
+  "products": [
+    {
+      "product": {
+        "$oid": "685e8dfc4d75c3f98e63e3b9"
+      },
+      "quantity": 2,
+      "_id": {
+        "$oid": "685f19e5054906912d742aa3"
+      }
+    },
+    {
+      "product": {
+        "$oid": "685e8dfc4d75c3f98e63e3b4"
+      },
+      "quantity": 1,
+      "_id": {
+        "$oid": "685f19e5054906912d742aa4"
+      }
+    },
+    {
+      "product": {
+        "$oid": "685e8dfc4d75c3f98e63e3b3"
+      },
+      "quantity": 1,
+      "_id": {
+        "$oid": "685f19e5054906912d742aa5"
+      }
+    },
+    {
+      "product": {
+        "$oid": "685e8dfc4d75c3f98e63e3b2"
+      },
+      "quantity": 1,
+      "_id": {
+        "$oid": "685f19e5054906912d742aa6"
+      }
+    }
+  ],
+  "coupon": {
+    "$oid": "685f10d8054906912d742a5a"
+  },
+  "total": 40960,
+  "createdAt": {
+    "$date": "2025-06-27T22:23:33.361Z"
+  },
+  "updatedAt": {
+    "$date": "2025-06-27T22:23:33.361Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "685f1bc0054906912d742ab4"
+  },
+  "user": {
+    "$oid": "685eade3774be637a8294f80"
+  },
+  "products": [
+    {
+      "product": {
+        "$oid": "685e8dfc4d75c3f98e63e3c2"
+      },
+      "quantity": 1,
+      "_id": {
+        "$oid": "685f1bc0054906912d742ab5"
+      }
+    },
+    {
+      "product": {
+        "$oid": "685e8dfc4d75c3f98e63e3ba"
+      },
+      "quantity": 2,
+      "_id": {
+        "$oid": "685f1bc0054906912d742ab6"
+      }
+    }
+  ],
+  "coupon": null,
+  "total": 14900,
+  "createdAt": {
+    "$date": "2025-06-27T22:31:28.555Z"
+  },
+  "updatedAt": {
+    "$date": "2025-06-27T22:31:28.555Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "685f1c54054906912d742ad1"
+  },
+  "user": {
+    "$oid": "68542467c032380a511301cf"
+  },
+  "products": [
+    {
+      "product": {
+        "$oid": "685e8dfc4d75c3f98e63e3bc"
+      },
+      "quantity": 1,
+      "_id": {
+        "$oid": "685f1c54054906912d742ad2"
+      }
+    },
+    {
+      "product": {
+        "$oid": "685e8dfc4d75c3f98e63e3bd"
+      },
+      "quantity": 1,
+      "_id": {
+        "$oid": "685f1c54054906912d742ad3"
+      }
+    },
+    {
+      "product": {
+        "$oid": "685e8dfc4d75c3f98e63e3b7"
+      },
+      "quantity": 2,
+      "_id": {
+        "$oid": "685f1c54054906912d742ad4"
+      }
+    }
+  ],
+  "coupon": {
+    "$oid": "685f1122054906912d742a61"
+  },
+  "total": 20880,
+  "createdAt": {
+    "$date": "2025-06-27T22:33:56.628Z"
+  },
+  "updatedAt": {
+    "$date": "2025-06-27T22:33:56.628Z"
+  },
+  "__v": 0
+}]

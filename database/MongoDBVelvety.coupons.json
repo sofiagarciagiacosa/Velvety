@@ -1,0 +1,72 @@
+[{
+  "_id": {
+    "$oid": "685e90dfdfc18295cf07f5e4"
+  },
+  "code": "ENVIOGRATIS",
+  "discount": "Envío Gratis",
+  "condition": "en compras mayores a $40000",
+  "minAmount": 40000,
+  "special": false,
+  "active": true,
+  "createdAt": {
+    "$date": "2025-06-27T12:38:55.877Z"
+  },
+  "updatedAt": {
+    "$date": "2025-06-27T12:38:55.877Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "685f10d8054906912d742a5a"
+  },
+  "code": "VELVETY20",
+  "discount": "20",
+  "condition": "en tu primera compra",
+  "minAmount": 0,
+  "special": true,
+  "active": true,
+  "createdAt": {
+    "$date": "2025-06-27T21:44:56.109Z"
+  },
+  "updatedAt": {
+    "$date": "2025-06-27T21:44:56.109Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "685f10fa054906912d742a5f"
+  },
+  "code": "VELVETY35",
+  "discount": "35",
+  "condition": "en compras mayores a $50000",
+  "minAmount": 50000,
+  "special": true,
+  "active": true,
+  "createdAt": {
+    "$date": "2025-06-27T21:45:30.991Z"
+  },
+  "updatedAt": {
+    "$date": "2025-06-27T21:45:30.991Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "685f1122054906912d742a61"
+  },
+  "code": "VELVETY10",
+  "discount": "10",
+  "condition": "solo para nuevos clientes",
+  "minAmount": 0,
+  "special": false,
+  "active": true,
+  "createdAt": {
+    "$date": "2025-06-27T21:46:10.028Z"
+  },
+  "updatedAt": {
+    "$date": "2025-06-27T21:46:10.028Z"
+  },
+  "__v": 0
+}]

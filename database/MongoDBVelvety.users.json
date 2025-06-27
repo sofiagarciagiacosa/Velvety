@@ -1,0 +1,38 @@
+[{
+  "_id": {
+    "$oid": "68542467c032380a511301cf"
+  },
+  "firstName": "John",
+  "lastName": "Mayer",
+  "email": "john@gmail.com",
+  "password": "$2b$10$A7ovhRfo99GRkyHr977CZutrh.i4xQa4VMlEodQivIAApwwEan89u",
+  "birthDate": {
+    "$date": "1977-10-16T00:00:00.000Z"
+  },
+  "createdAt": {
+    "$date": "2025-06-19T14:53:27.657Z"
+  },
+  "updatedAt": {
+    "$date": "2025-06-19T14:53:27.657Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "685eade3774be637a8294f80"
+  },
+  "firstName": "Chris",
+  "lastName": "Martin",
+  "email": "chrismartin@gmail.com",
+  "password": "$2b$10$JRHMCLG/WUMcOx412NjoMuheT8jsEhAzYUUjGXcEKsMqOmivMZ72O",
+  "birthDate": {
+    "$date": "1977-03-02T00:00:00.000Z"
+  },
+  "createdAt": {
+    "$date": "2025-06-27T14:42:43.728Z"
+  },
+  "updatedAt": {
+    "$date": "2025-06-27T14:42:43.728Z"
+  },
+  "__v": 0
+}]

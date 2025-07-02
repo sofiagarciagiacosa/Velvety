@@ -25,17 +25,17 @@ MongoDB Compass para administración de la base de datos local
 
 
 Roadmap del desarrollo
-1. Planificación y diseño
+1. Planificación y diseño:
 Definición del concepto: e-commerce de productos de skincare.
 Boceto inicial de las secciones.
 Estructura de carpetas.
 
-2. Frontend
+2. Frontend:
 Maquetación de las vistas con HTML y Bootstrap.
 Creación de componentes reutilizables como Navbar, Cards de productos y Carrito.
 Interacción dinámica con JavaScript.
 
-3. Autenticación
+3. Autenticación:
 Registro y login de usuarios con bcrypt y JWT.
 Almacenamiento del token en sessionStorage y validación para permitir la compra solo con sesión activa.
 
